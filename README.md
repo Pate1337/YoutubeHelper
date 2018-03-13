@@ -2,6 +2,10 @@
 React + Node based app
 Sovellus, joka käyttää YouTube APIa videoiden hakemiseen ja näyttämiseen. Lisää toiminnallisuutta suunnitellaan.
 
+## Frontend
+
+[YoutubeHelperFrontend](https://github.com/Pate1337/YoutubeHelperFrontend)
+
 ## Documentation
 
 #### Tuntikirjanpito
@@ -11,5 +15,3 @@ Sovellus, joka käyttää YouTube APIa videoiden hakemiseen ja näyttämiseen. L
 [Tuntikirjanpito Paavo Hemmo](https://github.com/Pate1337/YoutubeHelper/blob/master/documentation/tuntikirjanpito/PaavoHemmo.md)
 
 --------------------------------
-
-
