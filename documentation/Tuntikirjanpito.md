@@ -1,2 +1,2 @@
-Pvm | Tunnit | Kuvaus
------ | ------- | -------
+Nimi | Pvm | Tunnit | Kuvaus
+| ----- | ------- | -------
