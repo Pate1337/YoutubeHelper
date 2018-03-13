@@ -1,0 +1,19 @@
+{
+  "name": "youtubehelper",
+  "version": "1.0.0",
+  "description": "React + Node based app",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Pate1337/YoutubeHelper.git"
+  },
+  "author": "Mikko Takala & Paavo Hemmo",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Pate1337/YoutubeHelper/issues"
+  },
+  "homepage": "https://github.com/Pate1337/YoutubeHelper#readme"
+}
