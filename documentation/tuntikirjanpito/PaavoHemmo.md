@@ -1,0 +1,2 @@
+Nimi | Pvm | Tunnit | Kuvaus
+----- | ---- | ---- | ----
