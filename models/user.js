@@ -1,13 +1,24 @@
 const mongoose = require('mongoose')
 
-/*
-const User = mongoose.model('User', {
+const userSchema =  new mongoose.Schema({
     username: String,
     name: String,
-    passwordHash: String
+    passwordHash: String,
+    links: [{ type: mongoose.Schema.Types.ObjectId, ref: 'Link' }]
 })
-*/
 
+userSchema.statics.format = (user) => {
+  return {
+    id: user._id,
+    username: user.username,
+    name: user.name,
+    links: user.links
+  }
+}
+
+const User = mongoose.model('User', userSchema)
+
+/*
 const User = [
   {
     id: '123123',
@@ -36,4 +47,5 @@ const User = [
     }]
   }
 ]
+*/
 module.exports = User

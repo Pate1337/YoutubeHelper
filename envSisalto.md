@@ -11,3 +11,6 @@ SECRET=jotain
 //heroku config:set SECRET=jotain
 
 Esimerkkiurli: https://www.googleapis.com/youtube/v3/search?part=snippet&relatedToVideoId=TPXWtozVNzM&type=video&key={api_key}&maxResults=10
+
+Käyttäjän Eka123 salasana on eka123
+Käyttäjän Toka123 salasana on toka123
