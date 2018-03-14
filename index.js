@@ -6,6 +6,7 @@ const cors = require('cors')
 const mongoose = require('mongoose')
 const config = require('./utils/config')
 const usersRouter = require('./controllers/users')
+const path = require('path')
 
 
 mongoose.connect(config.mongoUrl)
@@ -21,6 +22,14 @@ mongoose.Promise = global.Promise
 app.use(cors())
 app.use(bodyParser.json())
 app.use('/api/users', usersRouter)
+
+app.use(express.static('build'))
+
+/*Tämä jotta kaikki pyynnöt ohjataan ensin index.html ja sitten vasta eteenpäin.*/
+app.use(express.static(path.join(__dirname, 'build')))
+app.get('/*', function (req, res) {
+   res.sendFile(path.join(__dirname, 'build', 'index.html'));
+ })
 
 const server = http.createServer(app)
 
