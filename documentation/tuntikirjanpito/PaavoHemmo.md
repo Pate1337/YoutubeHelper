@@ -12,3 +12,4 @@ P.H. | 15.03.18 | 0,5h | Saatu vihdoin videon otsikko sovellukseen Youtube APIst
 P.H. | 15.03.18 | 0,5h | Sovellus näyttää hakutulokset nyt JSON muodossa
 P.H. | 15.03.18 | 0,5h | Youtube APIn palauttama data saatu formatoitua oikeaan, käytettävään muotoon
 P.H. | 15.03.18 | 1h | Sovellus tallentaa hakutulokset localStorageen, joten sivun päivityksen yhteydessä tulokset eivät häviä.
+P.H. | 15.03.18 | 2,5h | Luotu näkymä videoille, joka koostuu thumbnaileista. Pikkukuvaketta painamalla aukeaa Youtuben Embedded player kyseiselle videolle.
