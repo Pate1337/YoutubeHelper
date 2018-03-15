@@ -10,3 +10,4 @@ P.H. | 14.03.18 | 1h | Viimeinkin saatu tehtyä Youtube APIin request, jonka Aut
 P.H. | 15.03.18 | 2,5h | Yritetty saada sovellus kommunikoimaan Youtube APIn kanssa. Datan käsittelyn kanssa vielä hieman epäselvyyksiä.
 P.H. | 15.03.18 | 0,5h | Saatu vihdoin videon otsikko sovellukseen Youtube APIsta
 P.H. | 15.03.18 | 0,5h | Sovellus näyttää hakutulokset nyt JSON muodossa
+P.H. | 15.03.18 | 0,5h | Youtube APIn palauttama data saatu formatoitua oikeaan, käytettävään muotoon
