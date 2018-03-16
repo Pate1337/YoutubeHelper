@@ -17,3 +17,4 @@ P.H. | 16.03.18 | 1h | Otettu käyttöön react-youtube, jonka avulla saadaan he
 P.H. | 16.03.18 | 2h | Linkin voi nyt lisätä käyttäjälle backendissa ja backend palauttaa käyttäjät populoituna linkkien kanssa.
 P.H. | 16.03.18 | 2h | Sovellukseen voi nyt kirjautua sisään. Toiminnallisuus linkkien lisäämiselle käyttäjäkohtaisesti on toteutettu backendiin.
 P.H. | 16.03.18 | 2h | Toiminnallisuutta linkkien lisäämiseen käyttäjän suosikeihin lisätty frontendiin. Vielä keskeneräinen.
+P.H. | 16.03.18 | 3h | Käyttäjä voi nyt lisätä itselleen suosikkeja hakutuloksista.

@@ -8,12 +8,8 @@ usersRouter.get('/', async (request, response) => {
     .find({ links: { $exists: true, $ne: [] } })
     .populate('links')
   const usersWithoutLinks = firstUsers.filter(u => u.links.length === 0)
-  console.log('firstUsers: ' + firstUsers)
-  console.log('usersWithLinks: ' + usersWithLinks)
-  console.log('usersWithoutLinks: ' + usersWithoutLinks)
 
   const users = usersWithLinks.concat(usersWithoutLinks)
-  console.log('users: ' + users)
   /*Toi populate oli ihan helvettiä*/
   response.json(users.map(User.format))
 })
