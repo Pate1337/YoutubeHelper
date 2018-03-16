@@ -16,3 +16,4 @@ P.H. | 15.03.18 | 2,5h | Luotu näkymä videoille, joka koostuu thumbnaileista. 
 P.H. | 16.03.18 | 1h | Otettu käyttöön react-youtube, jonka avulla saadaan helposti tieto siitä, kun video loppuu. Välttämätöntä soittolistan kannalta.
 P.H. | 16.03.18 | 2h | Linkin voi nyt lisätä käyttäjälle backendissa ja backend palauttaa käyttäjät populoituna linkkien kanssa.
 P.H. | 16.03.18 | 2h | Sovellukseen voi nyt kirjautua sisään. Toiminnallisuus linkkien lisäämiselle käyttäjäkohtaisesti on toteutettu backendiin.
+P.H. | 16.03.18 | 2h | Toiminnallisuutta linkkien lisäämiseen käyttäjän suosikeihin lisätty frontendiin. Vielä keskeneräinen.

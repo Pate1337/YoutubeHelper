@@ -13,7 +13,7 @@ const getTokenFrom = (request) => {
   return null
 }
 
-linksRouter.post('/', async (request, response) => {
+linksRouter.post('/favourites', async (request, response) => {
   /*Ilman tokenia vielä toistaseks. Haluun vaan kokeilla toimiiko tuo
   populate.*/
   try {
@@ -51,6 +51,7 @@ linksRouter.post('/', async (request, response) => {
     await user.save()
     /*Tuo ylempi ilmeisesti siis päivittää jo tietokannasa olevan userin.*/
 
+    /*Palautetaan linkki vaikka sitä ei todellisuudessa lisätäkkään uudestaan*/
     response.status(201).json(Link.format(savedLink))
   } catch (exception) {
     console.log('error')
