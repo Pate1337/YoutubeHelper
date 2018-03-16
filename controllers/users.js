@@ -3,16 +3,18 @@ const User = require('../models/user')
 const bcrypt = require('bcrypt')
 
 usersRouter.get('/', async (request, response) => {
-  const users = await User
-    .find({})
-    /*.populate('links', { title: 1, url: 1 })*/
-  /*Aattelin et palautettais aina frontille helposti käsiteltävässä muodossa,
-  siksi populate. Paitsi että nyt se ei toimi, koska lisätessä uus käyttäjä
-  toi links kenttä on tyhjä.*/
+  const firstUsers = await User.find({})
+  const usersWithLinks = await User
+    .find({ links: { $exists: true, $ne: [] } })
+    .populate('links')
+  const usersWithoutLinks = firstUsers.filter(u => u.links.length === 0)
+  console.log('firstUsers: ' + firstUsers)
+  console.log('usersWithLinks: ' + usersWithLinks)
+  console.log('usersWithoutLinks: ' + usersWithoutLinks)
 
-  /*Kovakoodatulla userlistillä(sijaitsee models/user)
-  const users = User
-  */
+  const users = usersWithLinks.concat(usersWithoutLinks)
+  console.log('users: ' + users)
+  /*Toi populate oli ihan helvettiä*/
   response.json(users.map(User.format))
 })
 
@@ -33,10 +35,7 @@ usersRouter.post('/', async (request, response) => {
     const saltRounds = 10
     const passwordHash = await bcrypt.hash(body.password, saltRounds)
 
-    /*Pitäis voida lisätä uusi käyttäjä ilman kenttää links.
-    Pitää viel miettii et miten hoitaa uuden käyttäjän lisäämisen tyhjällä
-    links kentällä, jotta se saadaan kuitenki mielellää tos populate muodos
-    fronttiin.*/
+    /*Uusi käyttäjä lisätään ilman kenttää links.*/
     const user = new User({
       username: body.username,
       name: body.name,

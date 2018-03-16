@@ -6,6 +6,7 @@ const cors = require('cors')
 const mongoose = require('mongoose')
 const config = require('./utils/config')
 const usersRouter = require('./controllers/users')
+const linksRouter = require('./controllers/links')
 const path = require('path')
 
 
@@ -22,6 +23,7 @@ mongoose.Promise = global.Promise
 app.use(cors())
 app.use(bodyParser.json())
 app.use('/api/users', usersRouter)
+app.use('/api/links', linksRouter)
 
 app.use(express.static('build'))
 
