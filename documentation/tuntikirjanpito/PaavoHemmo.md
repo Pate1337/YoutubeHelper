@@ -13,3 +13,4 @@ P.H. | 15.03.18 | 0,5h | Sovellus näyttää hakutulokset nyt JSON muodossa
 P.H. | 15.03.18 | 0,5h | Youtube APIn palauttama data saatu formatoitua oikeaan, käytettävään muotoon
 P.H. | 15.03.18 | 1h | Sovellus tallentaa hakutulokset localStorageen, joten sivun päivityksen yhteydessä tulokset eivät häviä.
 P.H. | 15.03.18 | 2,5h | Luotu näkymä videoille, joka koostuu thumbnaileista. Pikkukuvaketta painamalla aukeaa Youtuben Embedded player kyseiselle videolle.
+P.H. | 16.03.18 | 1h | Otettu käyttöön react-youtube, jonka avulla saadaan helposti tieto siitä, kun video loppuu. Välttämätöntä soittolistan kannalta.
