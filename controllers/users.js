@@ -14,6 +14,26 @@ usersRouter.get('/', async (request, response) => {
   response.json(users.map(User.format))
 })
 
+usersRouter.get('/:id', async (request, response) => {
+  try {
+    /*Ei vittu tää kusee taas jos käyttäjäl ei oo linkkejä*/
+    const searchedUserHasLinks = await User
+      .findOne({ _id: request.params.id, links: { $exists: true, $ne: [] } })
+      .populate('links')
+    console.log('searchedUserHasLinks: ' + searchedUserHasLinks)
+    /*Jos linkkejä ei ole, haetaan uudestaan ilman populatea.*/
+    let searchedUser = searchedUserHasLinks
+    /*En oo yhtään varma onko null vai undefined jos ei löydy.*/
+    if (searchedUserHasLinks === null) {
+      searchedUser = await User.findById(request.params.id)
+    }
+    response.status(201).json(User.format(searchedUser))
+  } catch (exception) {
+    console.log(exception)
+    response.status(400).send({ error: 'No users found!' })
+  }
+})
+
 usersRouter.post('/', async (request, response) => {
   try {
     const body = request.body

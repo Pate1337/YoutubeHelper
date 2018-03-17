@@ -19,3 +19,4 @@ P.H. | 16.03.18 | 2h | Sovellukseen voi nyt kirjautua sisään. Toiminnallisuus 
 P.H. | 16.03.18 | 2h | Toiminnallisuutta linkkien lisäämiseen käyttäjän suosikeihin lisätty frontendiin. Vielä keskeneräinen.
 P.H. | 16.03.18 | 3h | Käyttäjä voi nyt lisätä itselleen suosikkeja hakutuloksista.
 P.H. | 16.03.18 | 0,5h | Suosikkeja voi lisätä vain kirjautuneet käyttäjät.
+P.H. | 17.03.18 | 2,5h | Suosikit saadaan listattua. Backendiin lisätty get yhdelle käyttäjälle.
