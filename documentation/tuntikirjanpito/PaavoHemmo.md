@@ -21,3 +21,4 @@ P.H. | 16.03.18 | 3h | Käyttäjä voi nyt lisätä itselleen suosikkeja hakutul
 P.H. | 16.03.18 | 0,5h | Suosikkeja voi lisätä vain kirjautuneet käyttäjät.
 P.H. | 17.03.18 | 2,5h | Suosikit saadaan listattua. Backendiin lisätty get yhdelle käyttäjälle.
 P.H. | 17.03.18 | 1,5h | Backendiä muutettu soittolistojen luomiseksi.
+P.H. | 17.03.18 | 2h | Toteutettu frontendiin toiminnallisuus soittolistojen luomiseksi.
