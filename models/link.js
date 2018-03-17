@@ -5,6 +5,7 @@ Nää tulee olemaan niin monella. Riittää kun User pitää kirjaa linkeistä.*
 const linkSchema = new mongoose.Schema({
   title: String,
   url: String,
+  thumbnail: String,
   linkId: String
 })
 
@@ -13,6 +14,7 @@ linkSchema.statics.format = (link) => {
     id: link._id,
     title: link.title,
     url: link.url,
+    thumbnail: link.thumbnail,
     linkId: link.linkId
   }
 }
