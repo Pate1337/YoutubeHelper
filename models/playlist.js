@@ -9,7 +9,7 @@ playlistSchema.statics.format = (playlist) => {
   return {
     id: playlist._id,
     title: playlist.title,
-    links: user.links
+    links: playlist.links
   }
 }
 

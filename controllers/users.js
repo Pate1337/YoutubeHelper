@@ -3,29 +3,43 @@ const User = require('../models/user')
 const bcrypt = require('bcrypt')
 
 usersRouter.get('/', async (request, response) => {
-  const firstUsers = await User.find({})
-  const usersWithLinks = await User
+  /*Aivan liian hidasta etsiä ja populoida kaikki, joten palautetaan
+  ilman populointia. Jos käyttäjän tietoja tarvitaan, niin ne voidaan
+  hakea alempaa gettiä käyttämällä.*/
+  const users = await User.find({})
+  /*const usersWithLinks = await User
     .find({ links: { $exists: true, $ne: [] } })
     .populate('links')
   const usersWithoutLinks = firstUsers.filter(u => u.links.length === 0)
 
-  const users = usersWithLinks.concat(usersWithoutLinks)
+  const users = usersWithLinks.concat(usersWithoutLinks)*/
   /*Toi populate oli ihan helvettiä*/
   response.json(users.map(User.format))
 })
 
 usersRouter.get('/:id', async (request, response) => {
   try {
-    /*Ei vittu tää kusee taas jos käyttäjäl ei oo linkkejä*/
-    const searchedUserHasLinks = await User
-      .findOne({ _id: request.params.id, links: { $exists: true, $ne: [] } })
-      .populate('links')
-    console.log('searchedUserHasLinks: ' + searchedUserHasLinks)
-    /*Jos linkkejä ei ole, haetaan uudestaan ilman populatea.*/
-    let searchedUser = searchedUserHasLinks
-    /*En oo yhtään varma onko null vai undefined jos ei löydy.*/
-    if (searchedUserHasLinks === null) {
-      searchedUser = await User.findById(request.params.id)
+    /*Tää on nyt aika optimaalinen. Olen ylpeä.*/
+    const id = request.params.id
+    const user = await User.findById(id)
+    let searchedUser
+    if (user.links.length !== 0 && user.playlists.length !== 0) {
+      searchedUser = await User
+        .findById(id)
+        .populate('links playlists')
+      console.log('searchedUser: ' + searchedUser)
+    } else if (user.links.length !== 0) {
+      searchedUser = await User
+        .findById(id)
+        .populate('links')
+      console.log('searchedUser: ' + searchedUser)
+    } else if (user.playlists.length !== 0) {
+      searchedUser = await User
+        .findById(id)
+        .populate('playlists')
+      console.log('searchedUser: ' + searchedUser)
+    } else {
+      searchedUser = user
     }
     response.status(201).json(User.format(searchedUser))
   } catch (exception) {

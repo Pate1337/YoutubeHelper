@@ -32,7 +32,6 @@ linksRouter.post('/favourites', async (request, response) => {
     console.log('user: ' + user)
     /*Pitää vielä varmistaa, ettei linkkiä ole jo tietokannassa.
     Turha lisätä uudestaan samalla id:llä olevaa linkkiä.*/
-    /*Tässä kusee koska noille aiemmille linkeille ei ole määritelty linkId:tä*/
     const links = await Link.find({})
     console.log('links: ' + links)
     let linkExists = []
@@ -67,13 +66,47 @@ linksRouter.post('/favourites', async (request, response) => {
     response.status(201).json(Link.format(savedLink))
     /*Oletetaan että annetaan kaikki kentät pyynnössä, eli title ja url.*/
   } catch (exception) {
-    console.log('error')
+    if (exception.name === 'JsonWebTokenError') {
+      response.status(401).json({ error: exception.message })
+    } else {
+      console.log(exception)
+      response.status(500).json({ error: 'something went wrong...' })
+    }
   }
 })
 
 linksRouter.get('/', async (request, response) => {
   const links = await Link.find({})
   response.json(links.map(Link.format))
+})
+
+/*Tää on nyt ihan katastrofi. Usealla käyttäjällä voi olla sama linkki,
+eli sen id tietokannassa on sama. Siitä syystä tää poisto ei nyt suju.*/
+linksRouter.delete('/:id', async (request, response) => {
+  try {
+    const token = getTokenFrom(request)
+    /*const token = request.token*/
+    const decodedToken = jwt.verify(token, process.env.SECRET)
+    if (!token || !decodedToken.id) {
+      return response.status(401).json({ error: 'token missing or invalid' })
+    }
+    /*Voidaan kaivaa myös hakemalla käyttäjä ensin id:n perusteella
+    ja jos linkin id ei ole käyttäjän linkeissä, niin sillon error*/
+    const user = await User.findById(decodedToken.id)
+    console.log('user: ' + user)
+    const userHasLink = user.links
+      .filter(l => l.toString() === request.params.id.toString())
+    if (userHasLink.length === 0) {
+      return response.status(401).json({ error: 'can not remove other users blogs' })
+    }
+
+    await Link.findByIdAndRemove(request.params.id)
+    response.status(204).end()
+  } catch (exception) {
+    /*Tänne pomppaa jos ei ole headeria authorization*/
+    console.log(exception)
+    response.status(400).send({error: 'malformatted id'})
+  }
 })
 
 module.exports = linksRouter
