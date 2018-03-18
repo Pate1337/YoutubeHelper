@@ -26,7 +26,18 @@ usersRouter.get('/:id', async (request, response) => {
     if (user.links.length !== 0 && user.playlists.length !== 0) {
       searchedUser = await User
         .findById(id)
-        .populate('links playlists')
+        .populate([{
+          path: 'links',
+          model: 'Link'
+        },
+        {
+          path: 'playlists',
+          model: 'Playlist',
+          populate: {
+            path: 'links',
+            model: 'Link'
+          }
+        }])
       console.log('searchedUser: ' + searchedUser)
     } else if (user.links.length !== 0) {
       searchedUser = await User
@@ -36,7 +47,14 @@ usersRouter.get('/:id', async (request, response) => {
     } else if (user.playlists.length !== 0) {
       searchedUser = await User
         .findById(id)
-        .populate('playlists')
+        .populate({
+          path: 'playlists',
+          model: 'Playlist',
+          populate: {
+            path: 'links',
+            model: 'Link'
+          }
+        })
       console.log('searchedUser: ' + searchedUser)
     } else {
       searchedUser = user

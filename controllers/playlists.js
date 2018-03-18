@@ -88,13 +88,15 @@ playlistsRouter.post('/:id', async (request, response) => {
       link = links[0]
       /*Jos linkki oli jo olemassa, se voi olla käyttäjän playlistillä*/
       /*Tarkistetaan että ei ole käyttäjän playlistillä*/
-      const exists = playlist.links.find(l => l._id === link._id)
-      if (exists === undefined) {
+      const exists = playlist.links.find(l => l.toString() === link._id.toString())
+      if (exists.length === 0) {
+        console.log('linkki ei ole käyttäjän playlistissä')
         /*Linkki ei ole käyttäjän playlistissä*/
         playlist.links = playlist.links.concat(link._id)
         await playlist.save()
         return response.status(201).json(Link.format(link))
       } else {
+        console.log('linkki on käyttäjän playlistissä')
         /*Linkki on käyttäjän playlistissä*/
         return response.status(500).json({ error: 'link already in playlist' })
       }
