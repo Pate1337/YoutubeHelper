@@ -14,7 +14,6 @@ const getTokenFrom = (request) => {
 
 playlistsRouter.post('/', async (request, response) => {
   try {
-    /*Täällä ei nyt tarkisteta playlistin nimeä. Ehkä pitäisi.*/
     const body = request.body
     const token = getTokenFrom(request)
     const decodedToken = jwt.verify(token, process.env.SECRET)
@@ -25,6 +24,13 @@ playlistsRouter.post('/', async (request, response) => {
     console.log('tokeni: ' + decodedToken.id)
 
     const user = await User.findById(decodedToken.id)
+    /*Tarkistus ettei samannimistä playlistiä voida lisätä
+    samalle käyttäjälle.*/
+    const exists = user.playlists.filter(p => p.title === body.title)
+    console.log('exists.length playlist: ' + exists.length)
+    if (exists.length !== 0) {
+      return response.status(401).json({ error: 'playlist by that name already exists!' })
+    }
 
     const playlist = new Playlist({
       title: body.title
