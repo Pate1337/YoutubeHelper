@@ -28,3 +28,4 @@ P.H. | 18.03.18 | 2,5h | Frontendistä voi nyt lisätä linkkejä soittolistoi
 P.H. | 19.03.18 | 3h | Refaktorointia. Backendistä korjattu kaikki virheiden varalta. Refaktoroitu tietokantatauluja.
 P.H. | 19.03.18 | 1h | Korjailtu bugeja.
 P.H. | 19.03.18 | 1h | Backendi on nyt kunnossa olemassa olevien metodien osalta.
+P.H. | 19.03.18 | 1h | Sovellus nyt täysin bugiton. Ainakaan en yhtäkään havainnut.
