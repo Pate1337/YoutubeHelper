@@ -25,3 +25,4 @@ P.H. | 17.03.18 | 2h | Toteutettu frontendiin toiminnallisuus soittolistojen l
 P.H. | 18.03.18 | 2h | Soittolistat voi nyt luoda. Lisäksi koodia refaktoroitu hullun lailla.
 P.H. | 18.03.18 | 3h | Playlistiin voi lisätä linkkejä backendissa. Frontendin toiminnallisuus vielä kesken.
 P.H. | 18.03.18 | 2,5h | Frontendistä voi nyt lisätä linkkejä soittolistoihin. Backendin toiminnallisuutta paranneltu. Refaktoroitu iso läjä frontin koodia.
+P.H. | 19.03.18 | 3h | Refaktorointia. Backendistä korjattu kaikki virheiden varalta. Refaktoroitu tietokantatauluja.

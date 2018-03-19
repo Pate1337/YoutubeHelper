@@ -12,6 +12,7 @@ const getTokenFrom = (request) => {
   return null
 }
 
+/*Tämä ok, kunhan tietokanta tyhjennetään.*/
 playlistsRouter.post('/', async (request, response) => {
   try {
     const body = request.body
@@ -26,21 +27,37 @@ playlistsRouter.post('/', async (request, response) => {
     const user = await User.findById(decodedToken.id)
     /*Tarkistus ettei samannimistä playlistiä voida lisätä
     samalle käyttäjälle.*/
-    const exists = user.playlists.filter(p => p.title === body.title)
-    console.log('exists.length playlist: ' + exists.length)
-    if (exists.length !== 0) {
-      return response.status(401).json({ error: 'playlist by that name already exists!' })
+    let playlist
+    let savedPlaylist
+    const playlists = Playlist.find({ user: decodedToken.id })
+    console.log('playlistin haku kusee!!')
+    if (playlists === undefined || playlists.length === 0) {
+      /*Käyttäjällä ei ole soittolistoja*/
+      playlist = new Playlist({
+        title: body.title,
+        user: decodedToken.id
+      })
+      savedPlaylist = await playlist.save()
+      user.playlists = user.playlists.concat(savedPlaylist._id)
+      await user.save()
+      return response.status(201).json(Playlist.format(savedPlaylist))
+    } else {
+      /*Käyttäjällä on soittolistoja, tarkistetaan ettei samannimisiä*/
+      playlists.forEach(p => {
+        if (p.title === body.title) {
+          return response.status(401).json({ error: 'playlist by that name already exists!' })
+        }
+      })
+      /*Ei saman nimisiä*/
+      playlist = new Playlist({
+        title: body.title,
+        user: decodedToken.id
+      })
+      savedPlaylist = await playlist.save()
+      user.playlists = user.playlists.concat(savedPlaylist._id)
+      await user.save()
+      return response.status(201).json(Playlist.format(savedPlaylist))
     }
-
-    const playlist = new Playlist({
-      title: body.title
-    })
-    const savedPlaylist = await playlist.save()
-
-    user.playlists = user.playlists.concat(savedPlaylist._id)
-    await user.save()
-
-    response.status(201).json(Playlist.format(savedPlaylist))
   } catch (exception) {
     if (exception.name === 'JsonWebTokenError') {
       response.status(401).json({ error: exception.message })
@@ -52,6 +69,7 @@ playlistsRouter.post('/', async (request, response) => {
 })
 
 /*Tiettyyn playlistiin uuden linkin lisääminen*/
+/*Tämä on kunnossa*/
 playlistsRouter.post('/:id', async (request, response) => {
   try {
     const body = request.body
@@ -70,33 +88,30 @@ playlistsRouter.post('/:id', async (request, response) => {
     niin se otetaan käsittelyyn.*/
     let link
     const links = await Link.find({ linkId: body.linkId })
-    if (links.length === 0) {
+    if (links === undefined || links.length === 0) {
       link = new Link({
         title: body.title,
-        url: body.url,
+        thumbnail: body.thumbnail,
         linkId: body.linkId
       })
       const savedLink = await link.save()
       /*Jos linkki oli uusi, niin se ei voi olla käyttäjän playlistillä.*/
       playlist.links = playlist.links.concat(savedLink._id)
       await playlist.save()
-      /*En ole varma, pitääkö vielä concatata userin playlistiin!!!
-      Luulis et ei, koska userilla on playlist jolla on id. Ja siihen
-      playlistiin juuri lisättiin tuo uusi linkki.*/
+
       return response.status(201).json(Link.format(savedLink))
     } else {
       link = links[0]
+      console.log('link: ' + link)
       /*Jos linkki oli jo olemassa, se voi olla käyttäjän playlistillä*/
       /*Tarkistetaan että ei ole käyttäjän playlistillä*/
       const exists = playlist.links.find(l => l.toString() === link._id.toString())
-      if (exists.length === 0) {
-        console.log('linkki ei ole käyttäjän playlistissä')
+      if (!exists) {
         /*Linkki ei ole käyttäjän playlistissä*/
         playlist.links = playlist.links.concat(link._id)
         await playlist.save()
         return response.status(201).json(Link.format(link))
       } else {
-        console.log('linkki on käyttäjän playlistissä')
         /*Linkki on käyttäjän playlistissä*/
         return response.status(500).json({ error: 'link already in playlist' })
       }
@@ -115,6 +130,15 @@ playlistsRouter.post('/:id', async (request, response) => {
 playlistsRouter.get('/', async (request, response) => {
   const playlists = await Playlist.find({})
   response.json(playlists.map(Playlist.format))
+})
+
+playlistsRouter.delete('/:id', (request, response) => {
+  try {
+    Playlist.findByIdAndRemove(request.params.id)
+    response.status(204).end()
+  } catch (exception) {
+    response.status(400).send({error: 'malformatted id'})
+  }
 })
 
 module.exports = playlistsRouter

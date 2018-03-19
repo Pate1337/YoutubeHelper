@@ -1,5 +1,3 @@
-/*Tänne tulis sit ainaki se .put millä voidaan asettaa tokenin
-perusteella käyttäjälle linkki.*/
 const linksRouter = require('express').Router()
 const Link = require('../models/link')
 const User = require('../models/user')
@@ -13,9 +11,8 @@ const getTokenFrom = (request) => {
   return null
 }
 
+/*Tämä on myös nyt ok. */
 linksRouter.post('/favourites', async (request, response) => {
-  /*Ilman tokenia vielä toistaseks. Haluun vaan kokeilla toimiiko tuo
-  populate.*/
   console.log('Ollaan /favouritesissa')
   try {
     const token = getTokenFrom(request)
@@ -26,45 +23,40 @@ linksRouter.post('/favourites', async (request, response) => {
     }
     console.log('tokeni: ' + decodedToken.id)
     const body = request.body
-    /*Etsitään user jonka token/userId kenttä*/
-    /*const user = await User.findById(body.userId)*/
+    /*Etsitään user jonka token kenttä*/
     const user = await User.findById(decodedToken.id)
     console.log('user: ' + user)
     /*Pitää vielä varmistaa, ettei linkkiä ole jo tietokannassa.
     Turha lisätä uudestaan samalla id:llä olevaa linkkiä.*/
-    const links = await Link.find({})
-    console.log('links: ' + links)
-    let linkExists = []
-    if (links.length === 0) {
-      console.log('links === 0')
-      linkExists = []
-    } else {
-      linkExists = await Link.find({ linkId: body.linkId })
-      console.log('body.linkId: ' + body.linkId)
-    }
-    let savedLink
-    if (linkExists.length === 0) {
-      const link = new Link({
+    const links = await Link.find({ linkId: body.linkId })
+    let link
+    if (links === undefined || links.length === 0) {
+      link = new Link({
         title: body.title,
-        url: body.url,
+        thumbnail: body.thumbnail,
         linkId: body.linkId
       })
-      console.log('link: ' + link)
-      savedLink = await link.save()
+      const savedLink = await link.save()
+      /*Jos linkki oli uusi, niin se ei voi olla käyttäjän suosikeissa.*/
+      user.links = user.links.concat(savedLink._id)
+      await user.save()
+
+      return response.status(201).json(Link.format(savedLink))
     } else {
-      savedLink = linkExists[0]
+      link = links[0]
+      /*Jos linkki oli jo olemassa, se voi olla käyttäjän suosikeissa*/
+      /*Tarkistetaan että ei ole käyttäjän suosikeissa*/
+      const exists = user.links.find(l => l.toString() === link._id.toString())
+      if (!exists) {
+        /*Linkki ei ole käyttäjän suosikeissa*/
+        user.links = user.links.concat(link._id)
+        await user.save()
+        return response.status(201).json(Link.format(link))
+      } else {
+        /*Linkki on käyttäjän suosikeissa*/
+        return response.status(500).json({ error: 'link already in favourites' })
+      }
     }
-    console.log('savedLink: ' + savedLink)
-    console.log('savedLink._id: ' + savedLink._id)
-    console.log('savedLink.id: ' + savedLink.id)
-    /*Lisätään userin links kenttään savedLink._id. Siis pelkkä id, populate
-    myöhemmin.*/
-    user.links = user.links.concat(savedLink._id)
-    await user.save()
-    /*Tuo ylempi ilmeisesti siis päivittää jo tietokannasa olevan userin.*/
-    /*Palautetaan linkki vaikka uutta ei lisättykkään*/
-    response.status(201).json(Link.format(savedLink))
-    /*Oletetaan että annetaan kaikki kentät pyynnössä, eli title ja url.*/
   } catch (exception) {
     if (exception.name === 'JsonWebTokenError') {
       response.status(401).json({ error: exception.message })
@@ -80,19 +72,26 @@ linksRouter.get('/', async (request, response) => {
   response.json(links.map(Link.format))
 })
 
-/*Tää on nyt ihan katastrofi. Usealla käyttäjällä voi olla sama linkki,
-eli sen id tietokannassa on sama. Siitä syystä tää poisto ei nyt suju.*/
+/*Poistaessa linkin, se linkki jää kuleksimaan käyttäjien listaukseen
+get api/users soittolistoihin ja suosikeihin.
+Joten myös sieltä ne pitää poistaa.*/
 linksRouter.delete('/:id', async (request, response) => {
   try {
-    const token = getTokenFrom(request)
+    await Link.findByIdAndRemove(request.params.id)
+    response.status(204).end()
+  } catch (exception) {
+    response.status(400).send({error: 'malformatted id'})
+  }
+  /*try {
+    const token = getTokenFrom(request)*()
     /*const token = request.token*/
-    const decodedToken = jwt.verify(token, process.env.SECRET)
+    /*const decodedToken = jwt.verify(token, process.env.SECRET)
     if (!token || !decodedToken.id) {
       return response.status(401).json({ error: 'token missing or invalid' })
-    }
+    }*/
     /*Voidaan kaivaa myös hakemalla käyttäjä ensin id:n perusteella
     ja jos linkin id ei ole käyttäjän linkeissä, niin sillon error*/
-    const user = await User.findById(decodedToken.id)
+    /*const user = await User.findById(decodedToken.id)
     console.log('user: ' + user)
     const userHasLink = user.links
       .filter(l => l.toString() === request.params.id.toString())
@@ -101,12 +100,12 @@ linksRouter.delete('/:id', async (request, response) => {
     }
 
     await Link.findByIdAndRemove(request.params.id)
-    response.status(204).end()
-  } catch (exception) {
+    response.status(204).end()*/
+  /*} catch (exception) {*/
     /*Tänne pomppaa jos ei ole headeria authorization*/
-    console.log(exception)
+    /*console.log(exception)
     response.status(400).send({error: 'malformatted id'})
-  }
+  }*/
 })
 
 module.exports = linksRouter

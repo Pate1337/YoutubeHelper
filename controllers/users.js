@@ -84,6 +84,7 @@ usersRouter.post('/', async (request, response) => {
     const passwordHash = await bcrypt.hash(body.password, saltRounds)
 
     /*Uusi käyttäjä lisätään ilman kenttää links.*/
+    /*Kokeile, pitääkö olla määriteltynä kentät links ja playlists*/
     const user = new User({
       username: body.username,
       name: body.name,
@@ -96,6 +97,15 @@ usersRouter.post('/', async (request, response) => {
   } catch (exception) {
     console.log(exception)
     response.status(500).json({ error: 'something went wrong...' })
+  }
+})
+
+usersRouter.delete('/:id', async (request, response) => {
+  try {
+    await User.findByIdAndRemove(request.params.id)
+    response.status(204).end()
+  } catch (exception) {
+    response.status(400).send({error: 'malformatted id'})
   }
 })
 
