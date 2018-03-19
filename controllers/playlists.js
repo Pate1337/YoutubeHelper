@@ -27,14 +27,13 @@ playlistsRouter.post('/', async (request, response) => {
     const user = await User.findById(decodedToken.id)
     /*Tarkistus ettei samannimistä playlistiä voida lisätä
     samalle käyttäjälle.*/
+
     let playlist
     let savedPlaylist
-    const playlists = Playlist.find({ user: decodedToken.id })
-    console.log('playlists: ' + playlists)
-    if (playlists[0] === undefined || playlists === null || playlists.length === 0) {
-      console.log('tänne pitäis päästä ekal kerral??')
-      /*MINKÄ VITUN TOI SAATANAN FINDI PALAUTTAA EI VITTU OLE TOTTA*/
-      /*Tänne päädytään aina*/
+    const playlists = await Playlist.find({ user: decodedToken.id.toString() })
+    console.log('playlists.length: ' + playlists.length)
+    if (playlists === undefined || playlists.length === 0) {
+      console.log('käyttäjällä ei soittolistoja')
       /*Käyttäjällä ei ole soittolistoja*/
       playlist = new Playlist({
         title: body.title,
@@ -46,21 +45,23 @@ playlistsRouter.post('/', async (request, response) => {
       return response.status(201).json(savedPlaylist)
     } else {
       /*Käyttäjällä on soittolistoja, tarkistetaan ettei samannimisiä*/
-      console.log('Jostain vitun kumman syystä ollaankin täällä')
-      playlists.forEach(p => {
-        if (p.title === body.title) {
-          return response.status(401).json({ error: 'playlist by that name already exists!' })
-        }
-      })
-      /*Ei saman nimisiä*/
-      playlist = new Playlist({
-        title: body.title,
-        user: decodedToken.id
-      })
-      savedPlaylist = await playlist.save()
-      user.playlists = user.playlists.concat(savedPlaylist._id)
-      await user.save()
-      return response.status(201).json(savedPlaylist)
+      console.log('Käyttäjällä on soittolistoja')
+      const exists = playlists.find(p => p.title === body.title)
+      console.log('exists typeof: ' + typeof(exists))
+      if (!exists || exists.length === 0) {
+        /*Ei saman nimisiä*/
+        console.log('ei saman nimisiä soittolistoja')
+        playlist = new Playlist({
+          title: body.title,
+          user: decodedToken.id
+        })
+        savedPlaylist = await playlist.save()
+        user.playlists = user.playlists.concat(savedPlaylist._id)
+        await user.save()
+        return response.status(201).json(savedPlaylist)
+      }
+      console.log('samanniminen soittolista on jo käyttäjällä')
+      return response.status(401).json({ error: 'playlist by that name already exists!' })
     }
   } catch (exception) {
     if (exception.name === 'JsonWebTokenError') {
