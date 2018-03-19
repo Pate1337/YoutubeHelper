@@ -29,3 +29,4 @@ P.H. | 19.03.18 | 3h | Refaktorointia. Backendistä korjattu kaikki virheiden 
 P.H. | 19.03.18 | 1h | Korjailtu bugeja.
 P.H. | 19.03.18 | 1h | Backendi on nyt kunnossa olemassa olevien metodien osalta.
 P.H. | 19.03.18 | 1h | Sovellus nyt täysin bugiton. Ainakaan en yhtäkään havainnut.
+P.H. | 19.03.18 | 3h | Soittolistojen toiminnalisuus toimii nyt lähes täydellisesti. 
