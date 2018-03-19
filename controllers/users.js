@@ -100,13 +100,18 @@ usersRouter.post('/', async (request, response) => {
   }
 })
 
-usersRouter.delete('/:id', async (request, response) => {
+/*usersRouter.delete('/:id', async (request, response) => {
   try {
     await User.findByIdAndRemove(request.params.id)
     response.status(204).end()
   } catch (exception) {
     response.status(400).send({error: 'malformatted id'})
   }
+})*/
+
+usersRouter.delete('/all', async (request, response) => {
+  await User.remove({})
+  response.status(204).end()
 })
 
 module.exports = usersRouter

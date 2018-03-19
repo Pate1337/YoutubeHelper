@@ -41,7 +41,7 @@ linksRouter.post('/favourites', async (request, response) => {
       user.links = user.links.concat(savedLink._id)
       await user.save()
 
-      return response.status(201).json(Link.format(savedLink))
+      return response.status(201).json(savedLink)
     } else {
       link = links[0]
       /*Jos linkki oli jo olemassa, se voi olla käyttäjän suosikeissa*/
@@ -51,7 +51,7 @@ linksRouter.post('/favourites', async (request, response) => {
         /*Linkki ei ole käyttäjän suosikeissa*/
         user.links = user.links.concat(link._id)
         await user.save()
-        return response.status(201).json(Link.format(link))
+        return response.status(201).json(link)
       } else {
         /*Linkki on käyttäjän suosikeissa*/
         return response.status(500).json({ error: 'link already in favourites' })
@@ -75,13 +75,14 @@ linksRouter.get('/', async (request, response) => {
 /*Poistaessa linkin, se linkki jää kuleksimaan käyttäjien listaukseen
 get api/users soittolistoihin ja suosikeihin.
 Joten myös sieltä ne pitää poistaa.*/
-linksRouter.delete('/:id', async (request, response) => {
+/*linksRouter.delete('/:id', async (request, response) => {
   try {
     await Link.findByIdAndRemove(request.params.id)
     response.status(204).end()
   } catch (exception) {
     response.status(400).send({error: 'malformatted id'})
   }
+})*/
   /*try {
     const token = getTokenFrom(request)*()
     /*const token = request.token*/
@@ -106,6 +107,10 @@ linksRouter.delete('/:id', async (request, response) => {
     /*console.log(exception)
     response.status(400).send({error: 'malformatted id'})
   }*/
+
+linksRouter.delete('/all', async (request, response) => {
+  await Link.remove({})
+  response.status(204).end()
 })
 
 module.exports = linksRouter
