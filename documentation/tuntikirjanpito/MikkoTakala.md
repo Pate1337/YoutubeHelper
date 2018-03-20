@@ -5,4 +5,4 @@
 | 15.03.18 | 2h | Uuden käyttäjän luomisen toiminnallisuuden lisäämistä
 |  | 2h | Käyttäjän rekisteröinti tehty loppuun
 | 20.03.18 | 2h | Käyttäjän rekisteröinnin string-validationit kuntoon frontissa ja bäkissä, ja salasanan lisätarkistus(uusi kenttä) ja siihen visuaalinen ilmoitus
- | 10.5h |  
+ YHTEENSÄ | 10.5h |  
