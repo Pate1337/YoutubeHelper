@@ -33,3 +33,5 @@ P.H. | 19.03.18 | 3h | Soittolistojen toiminnalisuus toimii nyt lähes täydel
 P.H. | 19.03.18 | 0,5h | Refaktoroitu koodia siten, että soittolista soittaa kappaleita, vaikka uusia linkkejä lisätään kesken toiston.
 P.H. | 20.03.18 | 1h | Videohakua paranneltu.
 P.H. | 20.03.18 | 3h | Soittolistaa voidaan järjestellä.
+P.H. | 19.03.18 | 4h | Refaktoroitu järkyttävä määrä koodia, jotta soittolista saadaan soimaan sovelluksen taustalla ja tieto näytetään palkissa ylhäällä.
+P.H. | 20.03.18 | 1h | Soittolista soittaa nyt videoita taustalla, kun painetaan nappia. Soittolistan painikkeet toimivat myös yläpalkissa ja linkkien lisääminen päivittyy soittolistaan välittömästi.
