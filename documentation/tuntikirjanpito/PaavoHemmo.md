@@ -31,3 +31,4 @@ P.H. | 19.03.18 | 1h | Backendi on nyt kunnossa olemassa olevien metodien osal
 P.H. | 19.03.18 | 1h | Sovellus nyt täysin bugiton. Ainakaan en yhtäkään havainnut.
 P.H. | 19.03.18 | 3h | Soittolistojen toiminnalisuus toimii nyt lähes täydellisesti.
 P.H. | 19.03.18 | 0,5h | Refaktoroitu koodia siten, että soittolista soittaa kappaleita, vaikka uusia linkkejä lisätään kesken toiston.
+P.H. | 20.03.18 | 1h | Videohakua paranneltu.
