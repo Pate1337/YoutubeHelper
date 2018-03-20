@@ -71,8 +71,14 @@ usersRouter.post('/', async (request, response) => {
     const body = request.body
 
     /*Salasana vähintään 3 merkkiä*/
-    if (body.password.length < 3) {
-      return response.status(400).json({error: 'password has to be atleast 3 characters long'})
+    if (body.password.length < 8) {
+      return response.status(400).json({error: 'password has to be atleast 8 characters long!'})
+    }
+    if(body.name.length < 2) {
+      return response.status(400).json({error: 'Name must be at least 2 characters long!'})
+    }
+    if(body.username.length < 5) {
+      return response.status(400).json({error: 'Username must be at least 5 characters long!'})
     }
     /*Käyttäjätunnus oltava uniikki*/
     const existingUser = await User.find({username: body.username})
