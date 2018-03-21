@@ -36,4 +36,5 @@ P.H. | 20.03.18 | 3h | Soittolistaa voidaan järjestellä.
 P.H. | 20.03.18 | 4h | Refaktoroitu järkyttävä määrä koodia, jotta soittolista saadaan soimaan sovelluksen taustalla ja tieto näytetään palkissa ylhäällä.
 P.H. | 21.03.18 | 1h | Soittolista soittaa nyt videoita taustalla, kun painetaan nappia. Soittolistan painikkeet toimivat myös yläpalkissa ja linkkien lisääminen päivittyy soittolistaan välittömästi.
 P.H. | 21.03.18 | 1,5h | Bugeja korjailtu ympäri frontendiä.
-YHTEENSA | 63h
+P.H. | 21.03.18 | 0,5h | Videon progress bar yritetty saada toimimaan huonolla menestyksellä.
+YHTEENSA | 63,5h
