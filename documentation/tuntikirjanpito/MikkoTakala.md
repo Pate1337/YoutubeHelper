@@ -6,4 +6,5 @@
 |  | 2h | Käyttäjän rekisteröinti tehty loppuun
 | 20.03.18 | 2h | Käyttäjän rekisteröinnin string-validationit kuntoon frontissa ja bäkissä, ja salasanan lisätarkistus(uusi kenttä) ja siihen visuaalinen ilmoitus
 | 21.03.18 | 2h | Progress barin lisääminen piilotettuun soittolistaan. Toiminnallisuus kesken. APIen ja dokumentaatioiden lukemista
+| 22.03.18 | 4h | Favorites listaan linkin poistonappi ja aivan älytön bugihuntti koska 1 koodirivi. Fronttiin funktio poistolle bäkin kutsumista varten.
  YHTEENSÄ | 12.5h |  
