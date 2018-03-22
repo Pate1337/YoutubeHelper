@@ -39,4 +39,5 @@ P.H. | 21.03.18 | 1,5h | Bugeja korjailtu ympäri frontendiä.
 P.H. | 21.03.18 | 0,5h | Videon progress bar yritetty saada toimimaan huonolla menestyksellä.
 P.H. | 21.03.18 | 1h | Soittolistan toiminnallisuutta paranneltu.
 P.H. | 22.03.18 | 7h | Koko backendi refaktoroitu. Saatu frontendi lähes toimimaan pienen videopalkin kanssa ylhäällä.
-YHTEENSA | 71,5h
+P.H. | 23.03.18 | 8h | Videopalkki saatu toimimaan. Kun video piilotetaan soittimesta, sen toisto siirtyy ylöh videopalkkiin. Sieltä se voidaan siirtää takaisin soittimeen. Bugeja on vielä muutama.
+YHTEENSA | 79,5h
