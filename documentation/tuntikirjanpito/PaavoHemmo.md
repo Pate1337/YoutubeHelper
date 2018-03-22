@@ -38,4 +38,5 @@ P.H. | 21.03.18 | 1h | Soittolista soittaa nyt videoita taustalla, kun paineta
 P.H. | 21.03.18 | 1,5h | Bugeja korjailtu ympäri frontendiä.
 P.H. | 21.03.18 | 0,5h | Videon progress bar yritetty saada toimimaan huonolla menestyksellä.
 P.H. | 21.03.18 | 1h | Soittolistan toiminnallisuutta paranneltu.
-YHTEENSA | 64,5h
+P.H. | 22.03.18 | 7h | Koko backendi refaktoroitu. Saatu frontendi lähes toimimaan pienen videopalkin kanssa ylhäällä.
+YHTEENSA | 71,5h

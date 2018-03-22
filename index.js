@@ -5,10 +5,10 @@ const bodyParser = require('body-parser')
 const cors = require('cors')
 const mongoose = require('mongoose')
 const config = require('./utils/config')
-const usersRouter = require('./controllers/users')
-const linksRouter = require('./controllers/links')
+const usersRouter = require('./testControllers/users')
+const linksRouter = require('./testControllers/links')
 const loginRouter = require('./controllers/login')
-const playlistsRouter = require('./controllers/playlists')
+const playlistsRouter = require('./testControllers/playlists')
 const path = require('path')
 
 
