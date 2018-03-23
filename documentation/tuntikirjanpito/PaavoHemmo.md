@@ -46,4 +46,5 @@ P.H. | 23.03.18 | 0,5h | Videon pause bugi korjattu.
 P.H. | 23.03.18 | 0,5h | Korjattu bugi, jossa toisen soittolistan video on sama kuin soitettavan soittolistan video.
 P.H. | 23.03.18 | 4h | Yritetty saada sulavammaksi siirtymää videosoittimesta yläpalkkiin.
 P.H. | 23.03.18 | 2h | Soittopalkin toimintaa viilattu jälleen.
-YHTEENSA | 86,5h
+P.H. | 23.03.18 | 2h | Frontendia refaktoroitu. Paljon ylimääräistä renderöintiä pois. Palkki ei vieläkään optimaalinen.
+YHTEENSA | 88,5h
