@@ -41,4 +41,5 @@ P.H. | 21.03.18 | 1h | Soittolistan toiminnallisuutta paranneltu.
 P.H. | 22.03.18 | 7h | Koko backendi refaktoroitu. Saatu frontendi lähes toimimaan pienen videopalkin kanssa ylhäällä.
 P.H. | 23.03.18 | 8h | Videopalkki saatu toimimaan. Kun video piilotetaan soittimesta, sen toisto siirtyy ylöh videopalkkiin. Sieltä se voidaan siirtää takaisin soittimeen. Bugeja on vielä muutama.
 P.H. | 23.03.18 | 0,5h | Videon pause bugi korjattu.
-YHTEENSA | 80h
+P.H. | 23.03.18 | 0,5h | Korjattu bugi, jossa toisen soittolistan video on sama kuin soitettavan soittolistan video.
+YHTEENSA | 80,5h
