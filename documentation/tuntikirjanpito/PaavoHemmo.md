@@ -51,4 +51,5 @@ P.H. | 23.03.18 | 1h | Saatu viivettä vähennettyä videon toistossa jonkin v
 P.H. | 24.03.18 | 1h | Tällä hetkellä osa metodeista perustuu setTimeouttiin, pitää keksiä jotain parempaa.
 P.H. | 24.03.18 | 1h | Korjattu bugi liittyen linkin lisäämiseen ja toistoon heti kun linkki on lisätty.
 P.H. | 24.03.18 | 0,5h | Korjailtu soittopalkkia.
-YHTEENSA | 92h
+P.H. | 25.03.18 | 2h | Rupee usko meneen tohon 0 viiveeseen ku videon toisto siirretään toiseen paikkaa. Kolmen millisekunnin sisällä tapahtuu pauseVideo ja playVideo kutsut, silti kerkee kahvit keittään välissä.
+YHTEENSA | 94h
