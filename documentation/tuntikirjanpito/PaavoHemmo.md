@@ -49,4 +49,5 @@ P.H. | 23.03.18 | 2h | Soittopalkin toimintaa viilattu jälleen.
 P.H. | 23.03.18 | 2h | Frontendia refaktoroitu. Paljon ylimääräistä renderöintiä pois. Palkki ei vieläkään optimaalinen.
 P.H. | 23.03.18 | 1h | Saatu viivettä vähennettyä videon toistossa jonkin verran.
 P.H. | 24.03.18 | 1h | Tällä hetkellä osa metodeista perustuu setTimeouttiin, pitää keksiä jotain parempaa.
-YHTEENSA | 90,5h
+P.H. | 24.03.18 | 1h | Korjattu bugi liittyen linkin lisäämiseen ja toistoon heti kun linkki on lisätty.
+YHTEENSA | 91,5h
