@@ -7,4 +7,6 @@
 | 20.03.18 | 2h | Käyttäjän rekisteröinnin string-validationit kuntoon frontissa ja bäkissä, ja salasanan lisätarkistus(uusi kenttä) ja siihen visuaalinen ilmoitus
 | 21.03.18 | 2h | Progress barin lisääminen piilotettuun soittolistaan. Toiminnallisuus kesken. APIen ja dokumentaatioiden lukemista
 | 22.03.18 | 4h | Favorites listaan linkin poistonappi ja aivan älytön bugihuntti koska 1 koodirivi. Fronttiin funktio poistolle bäkin kutsumista varten.
- YHTEENSÄ | 16.5h |  
+| 26.03.18 | 1h | User.js runkoa, läppärille mongodb konffaus .enviin, 22-26 tulleen uuden koodin läpikäyntiä ja Heroku -version testailua.
+|   | 3.5h | Favorite linkkien poisto tehty loppuun, nyt myös User olion favorites listalta poistuu linkki joka on poistettu.
+ YHTEENSÄ | 21h |  
