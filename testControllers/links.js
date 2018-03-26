@@ -42,7 +42,7 @@ linksRouter.post('/favourites', async (request, response) => {
       const foundLink = populateUser.links.find(l =>
         l.linkId === body.linkId)
 
-      if (foundLink === undefined || foundLink === null || foundLink.length === 0) {
+      if (foundLink === undefined || foundLink === null || foundLink.length === 0) {
         /*Kaikki ok, linkki lisätään tietokantaan ja suosikeihin.*/
         const link = new Link({
           title: body.title,
@@ -84,7 +84,7 @@ linksRouter.post('/favourites', async (request, response) => {
     sitten haetaan favoritedBy:n perusteella.*/
     const linksFound = links
       .find(l => l.favoritedBy.toString() === decodedToken.id.toString())
-    if (linksFound === undefined || linksFound === null || linksFound.length === 0) {
+    if (linksFound === undefined || linksFound === null || linksFound.length === 0) {
       /*Ei löytynyt linkkiä kyseisellä linkId:llä joka olisi käyttäjän
       suosikeissa. Voidaan lisätä linkki tietokantaan ja käyttäjän
       suosikeihin ja palauttaa response.*/
@@ -125,9 +125,40 @@ linksRouter.delete('/all', async (request, response) => {
 })
 
 linksRouter.delete('/favourites', async (request, response) => {
-  console.log('reqparams linkid bäkin deletestä', request.body)
-  await Link.findByIdAndRemove(request.body.id)
-  response.status(204).end()
+  try {
+    //const token = getTokenFrom(request)
+    const authorization = request.body.usertoken
+    let decodedToken = null
+    console.log('deleten usertoken', request.body.usertoken)
+    if ((authorization != undefined) && authorization.toLowerCase().startsWith('bearer ')) {
+      //return authorization.substring(7)
+      console.log('ennen jwt homoilua')
+      decodedToken = jwt.verify(authorization.substring(7), process.env.SECRET)
+      console.log('decoded token: ', decodedToken)
+    } else {
+      console.log('if statement ei toimi')
+    }
+
+    if (!authorization || !decodedToken.id) {
+      return response.status(401).json({ error: 'token missing or invalid' })
+    }
+
+    console.log('reqparams linkid bäkin deletestä', request.body)
+    await Link.findByIdAndRemove(request.body.id)
+    const user = await User.findById(decodedToken.id)
+    console.log('USER LÖYDETTY')
+    //console.log('USERIN LINKIT:', user.links)
+    //console.log('LINKIN ID: ', user.links[0])
+    //console.log('POISTETTAVAN LINKIN ID: ', request.body.id)
+    //console.log('FILTTERÖITY LISTA: ', user.links.filter(link => link != request.body.id))
+    user.links = user.links.filter(link => link != request.body.id)
+    await user.save()
+
+    response.status(204).end()
+  } catch (e) {
+    return 'error'
+  }
+
 })
 
 module.exports = linksRouter
