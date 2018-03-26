@@ -52,4 +52,5 @@ P.H. | 24.03.18 | 1h | Tällä hetkellä osa metodeista perustuu setTimeoutti
 P.H. | 24.03.18 | 1h | Korjattu bugi liittyen linkin lisäämiseen ja toistoon heti kun linkki on lisätty.
 P.H. | 24.03.18 | 0,5h | Korjailtu soittopalkkia.
 P.H. | 25.03.18 | 2h | Rupee usko meneen tohon 0 viiveeseen ku videon toisto siirretään toiseen paikkaa. Kolmen millisekunnin sisällä tapahtuu pauseVideo ja playVideo kutsut, silti kerkee kahvit keittään välissä.
-YHTEENSA | 94h
+P.H. | 26.03.18 | 8h | Lisätty linkkiehdotukset. Tietokantaa muokattu, backendiin lisätty metodit ehdotuksien lisäämiseen ja hakemiseen. Frontend muokattu sopivaksi. Toimii toistaiseksi pelkästään suosikin lisäämisen yhteydessä.
+YHTEENSA | 102h

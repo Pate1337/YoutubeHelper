@@ -41,7 +41,6 @@ playlistsRouter.post('/', async (request, response) => {
     } else {
       /*Käyttäjällä on soittolistoja, tarkistetaan ettei samannimisiä*/
       const exists = playlists.find(p => p.title === body.title)
-      console.log('exists typeof: ' + typeof(exists))
       if (!exists || exists.length === 0) {
         /*Ei saman nimisiä*/
         playlist = new Playlist({

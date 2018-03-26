@@ -114,6 +114,7 @@ linksRouter.post('/favourites', async (request, response) => {
   }
 })
 
+
 linksRouter.get('/', async (request, response) => {
   const links = await Link.find({})
   response.json(links.map(Link.format))

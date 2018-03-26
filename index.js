@@ -9,6 +9,7 @@ const usersRouter = require('./testControllers/users')
 const linksRouter = require('./testControllers/links')
 const loginRouter = require('./controllers/login')
 const playlistsRouter = require('./testControllers/playlists')
+const relatedsRouter = require('./testControllers/relateds')
 const path = require('path')
 
 
@@ -28,6 +29,7 @@ app.use('/api/users', usersRouter)
 app.use('/api/links', linksRouter)
 app.use('/api/login', loginRouter)
 app.use('/api/playlists', playlistsRouter)
+app.use('/api/relateds', relatedsRouter)
 
 app.use(express.static('build'))
 

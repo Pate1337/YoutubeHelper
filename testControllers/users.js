@@ -1,5 +1,6 @@
 const usersRouter = require('express').Router()
 const User = require('../models/user')
+const Link = require('../models/link')
 const bcrypt = require('bcrypt')
 
 usersRouter.get('/', async (request, response) => {
@@ -17,13 +18,35 @@ usersRouter.get('/', async (request, response) => {
   response.json(users.map(User.format))
 })
 
+
+
 usersRouter.get('/:id', async (request, response) => {
   try {
     /*Tää on nyt aika optimaalinen. Olen ylpeä.*/
     const id = request.params.id
     const user = await User.findById(id)
     let searchedUser
-    if (user.links.length !== 0 && user.playlists.length !== 0) {
+    if (user.links.length !== 0 && user.playlists.length !== 0
+      && user.relatedLinks.length !== 0) {
+      searchedUser = await User
+        .findById(id)
+        .populate([{
+          path: 'links',
+          model: 'Link'
+        },
+        {
+          path: 'playlists',
+          model: 'Playlist',
+          populate: {
+            path: 'links',
+            model: 'Link'
+          }
+        },
+        {
+          path: 'relatedLinks',
+          model: 'Link'
+        }])
+    } else if (user.links.length !== 0 && user.playlists.length !== 0) {
       searchedUser = await User
         .findById(id)
         .populate([{
@@ -38,12 +61,36 @@ usersRouter.get('/:id', async (request, response) => {
             model: 'Link'
           }
         }])
-      console.log('searchedUser: ' + searchedUser)
+    } else if (user.links.length !== 0 && user.relatedLinks.length !== 0) {
+      searchedUser = await User
+        .findById(id)
+        .populate([{
+          path: 'links',
+          model: 'Link'
+        },
+        {
+          path: 'relatedLinks',
+          model: 'Link'
+        }])
+    } else if (user.playlists.length !== 0 && user.relatedLinks.length !== 0) {
+      searchedUser = await User
+        .findById(id)
+        .populate([{
+          path: 'playlists',
+          model: 'Playlist',
+          populate: {
+            path: 'links',
+            model: 'Link'
+          }
+        },
+        {
+          path: 'relatedLinks',
+          model: 'Link'
+        }])
     } else if (user.links.length !== 0) {
       searchedUser = await User
         .findById(id)
         .populate('links')
-      console.log('searchedUser: ' + searchedUser)
     } else if (user.playlists.length !== 0) {
       searchedUser = await User
         .findById(id)
@@ -55,7 +102,10 @@ usersRouter.get('/:id', async (request, response) => {
             model: 'Link'
           }
         })
-      console.log('searchedUser: ' + searchedUser)
+    } else if (user.relatedLinks.length !== 0) {
+      searchedUser = await User
+        .findById(id)
+        .populate('relatedLinks')
     } else {
       searchedUser = user
     }
