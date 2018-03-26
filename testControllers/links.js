@@ -124,4 +124,10 @@ linksRouter.delete('/all', async (request, response) => {
   response.status(204).end()
 })
 
+linksRouter.delete('/favourites', async (request, response) => {
+  console.log('reqparams linkid bäkin deletestä', request.body)
+  await Link.findByIdAndRemove(request.body.id)
+  response.status(204).end()
+})
+
 module.exports = linksRouter
