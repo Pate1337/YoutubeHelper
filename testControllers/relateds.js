@@ -1,6 +1,7 @@
 const relatedsRouter = require('express').Router()
 const Link = require('../models/link')
 const User = require('../models/user')
+const RelatedLink = require('../models/relatedLink')
 const jwt = require('jsonwebtoken')
 
 
@@ -34,8 +35,22 @@ relatedsRouter.post('/', async (request, response) => {
         linkId: link.linkId
       })
       let savedLink = await linkToAdd.save()
-      links.push(savedLink)
-      user.relatedLinks = user.relatedLinks.concat(savedLink._id)
+      let relatedToAdd = new RelatedLink({
+        count: 1,
+        link: savedLink._id
+      })
+      let savedRelated = await relatedToAdd.save()
+      links.push({
+        _id: savedRelated._id,
+        count: 1,
+        link: {
+          _id: savedLink._id,
+          title: savedLink.title,
+          thumbnail: savedLink.thumbnail,
+          linkId: savedLink.linkId
+        }
+      })
+      user.relatedLinks = user.relatedLinks.concat(savedRelated._id)
       await user.save()
     }
     console.log('Ehdotuksiin Lisätyt linkit: ' + links)
@@ -81,14 +96,15 @@ relatedsRouter.delete('/:id', async (request, response) => {
     if (!token || !decodedToken.id) {
       return response.status(401).json({ error: 'token missing or invalid' })
     }
-
+    const linkId = request.params.id
     const user = await User.findById(decodedToken.id)
-
-    await Link.findByIdAndRemove(request.params.id)
+    const removed = await RelatedLink.findOneAndRemove({ link: linkId.toString() })
+    console.log('Poistettava relatedLink: ' + removed)
+    await Link.findByIdAndRemove(linkId)
 
     let newRelateds = []
     user.relatedLinks.forEach(l => {
-      if (l.toString() !== request.params.id.toString()) {
+      if (l.toString() !== removed._id.toString()) {
         newRelateds.push(l)
       } else {
         console.log('POISTETTAVA RELATED: ' + l)

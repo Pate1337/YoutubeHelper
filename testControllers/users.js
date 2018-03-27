@@ -1,6 +1,7 @@
 const usersRouter = require('express').Router()
 const User = require('../models/user')
 const Link = require('../models/link')
+const RelatedLink = require('../models/relatedLink')
 const bcrypt = require('bcrypt')
 
 usersRouter.get('/', async (request, response) => {
@@ -44,7 +45,11 @@ usersRouter.get('/:id', async (request, response) => {
         },
         {
           path: 'relatedLinks',
-          model: 'Link'
+          model: 'RelatedLink',
+          populate: {
+            path: 'link',
+            model: 'Link'
+          }
         }])
     } else if (user.links.length !== 0 && user.playlists.length !== 0) {
       searchedUser = await User
@@ -70,7 +75,11 @@ usersRouter.get('/:id', async (request, response) => {
         },
         {
           path: 'relatedLinks',
-          model: 'Link'
+          model: 'RelatedLink',
+          populate: {
+            path: 'link',
+            model: 'Link'
+          }
         }])
     } else if (user.playlists.length !== 0 && user.relatedLinks.length !== 0) {
       searchedUser = await User
@@ -85,7 +94,11 @@ usersRouter.get('/:id', async (request, response) => {
         },
         {
           path: 'relatedLinks',
-          model: 'Link'
+          model: 'RelatedLink',
+          populate: {
+            path: 'link',
+            model: 'Link'
+          }
         }])
     } else if (user.links.length !== 0) {
       searchedUser = await User
@@ -105,7 +118,14 @@ usersRouter.get('/:id', async (request, response) => {
     } else if (user.relatedLinks.length !== 0) {
       searchedUser = await User
         .findById(id)
-        .populate('relatedLinks')
+        .populate({
+          path: 'relatedLinks',
+          model: 'RelatedLink',
+          populate: {
+            path: 'link',
+            model: 'Link'
+          }
+        })
     } else {
       searchedUser = user
     }
