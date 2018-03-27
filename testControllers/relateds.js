@@ -111,10 +111,6 @@ relatedsRouter.delete('/:id', async (request, response) => {
       }
     })
     user.relatedLinks = newRelateds
-    console.log('relatedLinks nyt: ')
-    newRelateds.forEach(l => {
-      console.log(l)
-    })
     await user.save()
     response.status(204).end()
   } catch (exception) {
@@ -124,6 +120,35 @@ relatedsRouter.delete('/:id', async (request, response) => {
       console.log(exception)
       response.status(500).json({ error: 'something went wrong...' })
     }
+  }
+})
+
+relatedsRouter.put('/', async (request, response) => {
+  try {
+    console.log('Lisätään counttia')
+    /*const body = request.body
+    let modifiedRelatedLinks = []
+    body.forEach(l => {
+      let relatedLink = {
+        count: l.count,
+        link: l.link
+      }
+      let modifiedRelatedLink = await RelatedLink
+        .findByIdAndUpdate(l._id, relatedLink, {new: true})
+      modifiedRelatedLinks.push(modifiedRelatedLink)
+    })
+    return response.status(201).json(modifiedRelatedLinks)*/
+    const body = request.body
+    const relatedLink = {
+      count: body.count,
+      link: body.link
+    }
+    const modifiedRelatedLink = await RelatedLink
+      .findByIdAndUpdate(body._id, relatedLink, {new: true})
+    return response.status(201).json(modifiedRelatedLink)
+  } catch (exception) {
+    console.log(exception)
+    response.status(400).send({error: 'something went terribly wrong'})
   }
 })
 

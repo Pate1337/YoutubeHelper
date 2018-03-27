@@ -54,4 +54,5 @@ P.H. | 24.03.18 | 0,5h | Korjailtu soittopalkkia.
 P.H. | 25.03.18 | 2h | Rupee usko meneen tohon 0 viiveeseen ku videon toisto siirretään toiseen paikkaa. Kolmen millisekunnin sisällä tapahtuu pauseVideo ja playVideo kutsut, silti kerkee kahvit keittään välissä.
 P.H. | 26.03.18 | 8h | Lisätty linkkiehdotukset. Tietokantaa muokattu, backendiin lisätty metodit ehdotuksien lisäämiseen ja hakemiseen. Frontend muokattu sopivaksi. Toimii toistaiseksi pelkästään suosikin lisäämisen yhteydessä.
 P.H. | 27.03.18 | 3,5h | Lisätty toiminnalisuus, joka mahdollistaa linkkiehdotusten järjestämisen sen mukaan, kuinka usein linkkiä on ehdotettu käyttäjälle.
-YHTEENSA | 105,5h
+P.H. | 27.03.18 | 2h | Linkkiehdotukset on nyt mahdollista järjestää.
+YHTEENSA | 107,5h
