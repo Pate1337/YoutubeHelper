@@ -16,7 +16,7 @@ const getTokenFrom = (request) => {
 /*Tää sit lisäämään yks kerrallaan niitä linkkejä!*/
 relatedsRouter.post('/', async (request, response) => {
   try {
-    console.log('lisätään linkit relatediin')
+    console.log('lisätään linkit relatediin. Aika kun saavutaan: ' + Date.now())
     const token = getTokenFrom(request)
     const decodedToken = jwt.verify(token, process.env.SECRET)
 
@@ -27,6 +27,7 @@ relatedsRouter.post('/', async (request, response) => {
 
     const user = await User.findById(decodedToken.id)
     let links = []
+    console.log('Aika kun ruvetaan käymään linkkejä läpi: ' + Date.now())
     for (let i = 0; i < body.length; i++) {
       let link = body[i]
       let linkToAdd = new Link({
@@ -54,6 +55,7 @@ relatedsRouter.post('/', async (request, response) => {
       await user.save()
     }
     console.log('Ehdotuksiin Lisätyt linkit: ' + links)
+    console.log('Aika kun suoritettu: ' + Date.now())
     return response.status(201).json(links)
   } catch (exception) {
     if (exception.name === 'JsonWebTokenError') {
