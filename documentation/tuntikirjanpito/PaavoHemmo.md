@@ -55,4 +55,5 @@ P.H. | 25.03.18 | 2h | Rupee usko meneen tohon 0 viiveeseen ku videon toisto s
 P.H. | 26.03.18 | 8h | Lisätty linkkiehdotukset. Tietokantaa muokattu, backendiin lisätty metodit ehdotuksien lisäämiseen ja hakemiseen. Frontend muokattu sopivaksi. Toimii toistaiseksi pelkästään suosikin lisäämisen yhteydessä.
 P.H. | 27.03.18 | 3,5h | Lisätty toiminnalisuus, joka mahdollistaa linkkiehdotusten järjestämisen sen mukaan, kuinka usein linkkiä on ehdotettu käyttäjälle.
 P.H. | 27.03.18 | 2h | Linkkiehdotukset on nyt mahdollista järjestää.
-YHTEENSA | 107,5h
+P.H. | 28.03.18 | 2h | Ehdotuksia kerätään nyt myös, kun linkki lisätään soittolistalle.
+YHTEENSA | 109,5h
