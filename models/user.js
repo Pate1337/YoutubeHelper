@@ -6,7 +6,9 @@ const userSchema =  new mongoose.Schema({
     passwordHash: String,
     links: [{ type: mongoose.Schema.Types.ObjectId, ref: 'Link' }],
     playlists: [{ type: mongoose.Schema.Types.ObjectId, ref: 'Playlist' }],
-    relatedLinks: [{ type: mongoose.Schema.Types.ObjectId, ref: 'RelatedLink' }]
+    relatedLinks: [{ type: mongoose.Schema.Types.ObjectId, ref: 'RelatedLink' }],
+    rComments: [{ type: mongoose.Schema.Types.ObjectId, ref: 'Comment'}],
+    sentComments: [{ type: mongoose.Schema.Types.ObjectId, ref: 'Comment'}]
 })
 
 userSchema.statics.format = (user) => {
@@ -16,7 +18,9 @@ userSchema.statics.format = (user) => {
     name: user.name,
     links: user.links,
     playlists: user.playlists,
-    relatedLinks: user.relatedLinks
+    relatedLinks: user.relatedLinks,
+    rComments: user.rComments,
+    sentComments: user.sentComments
   }
 }
 

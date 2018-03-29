@@ -10,4 +10,5 @@
 | 26.03.18 | 1h | User.js runkoa, läppärille mongodb konffaus .enviin, 22-26 tulleen uuden koodin läpikäyntiä ja Heroku -version testailua.
 |   | 3.5h | Favorite linkkien poisto tehty loppuun, nyt myös User olion favorites listalta poistuu linkki joka on poistettu.
 | 27.03.18 | 3h | Favorites listaa muokattu paremmaksi, voi soittaa videoita, ulkoasu järkevämpi. Käyttäjälistaan lisätty toiminnallisuutta, kesken vielä
- YHTEENSÄ | 24h |  
+| 29.03.2018 | 3h | Käyttäjien välisten kommenttien jättämisen rakentamista, vähän sekava eikä toimi vielä.
+ YHTEENSÄ | 27h |  
