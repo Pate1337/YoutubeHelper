@@ -59,4 +59,5 @@ P.H. | 28.03.18 | 2h | Ehdotuksia kerätään nyt myös, kun linkki lisätä�
 P.H. | 28.03.18 | 5h | Nyt linkkiehdotukset ja linkit lisätään SATA varmasti tietokantaan oikein. Intervallin avulla sain uudet lisäykset odottamaan, kunnes serveri on vapaa.
 P.H. | 29.03.18 | 1h | Lisätty videoehdotuksille filter kenttä ja siistitty hakutulosten koodia.
 P.H. | 29.03.18 | 2h | Otettu käyttöön BrowserRouter.
-YHTEENSA | 117,5h
+P.H. | 29.03.18 | 1,5h | Lisätty toiminnallisuutta (mm. linkkiehdotus etusivulle) sekä routeja.
+YHTEENSA | 119h
