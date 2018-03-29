@@ -57,4 +57,5 @@ P.H. | 27.03.18 | 3,5h | Lisätty toiminnalisuus, joka mahdollistaa linkkiehdo
 P.H. | 27.03.18 | 2h | Linkkiehdotukset on nyt mahdollista järjestää.
 P.H. | 28.03.18 | 2h | Ehdotuksia kerätään nyt myös, kun linkki lisätään soittolistalle.
 P.H. | 28.03.18 | 5h | Nyt linkkiehdotukset ja linkit lisätään SATA varmasti tietokantaan oikein. Intervallin avulla sain uudet lisäykset odottamaan, kunnes serveri on vapaa.
-YHTEENSA | 114,5h
+P.H. | 29.03.18 | 1h | Lisätty videoehdotuksille filter kenttä ja siistitty hakutulosten koodia.
+YHTEENSA | 115,5h
