@@ -61,5 +61,6 @@ P.H. | 29.03.18 | 1h | Lisätty videoehdotuksille filter kenttä ja siistitty ha
 P.H. | 29.03.18 | 2h | Otettu käyttöön BrowserRouter.
 P.H. | 29.03.18 | 1,5h | Lisätty toiminnallisuutta (mm. linkkiehdotus etusivulle) sekä routeja.
 P.H. | 29.03.18 | 2,5h | Linkkiehdotusta korjattu siten, ettei mikään muu toiminta sivulla vaikuta näytettävään ehdotukseen, vaikka se lisättäisiin käyttäjän linkkeihin.
-P.H. | 31.03.18 | 1h | Linkkisuositusten listauukseen mahdollisuus toistaa videoita ja lisätä niitä omiin linkkeihin. 
-YHTEENSÄ | 122,5h
+P.H. | 31.03.18 | 1h | Linkkisuositusten listauukseen mahdollisuus toistaa videoita ja lisätä niitä omiin linkkeihin.
+P.H. | 02.04.18 | 2h | Aloitettu refaktorointi, jotta videoita voidaan soittaa yksi kerrallaan videosoittimessa. Luodaan siis uusi reducer, joka hallitsee videon sijaintia (yläpalkki vai soitin) jne.
+YHTEENSÄ | 124,5h
