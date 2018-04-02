@@ -63,4 +63,5 @@ P.H. | 29.03.18 | 1,5h | Lisätty toiminnallisuutta (mm. linkkiehdotus etusivul
 P.H. | 29.03.18 | 2,5h | Linkkiehdotusta korjattu siten, ettei mikään muu toiminta sivulla vaikuta näytettävään ehdotukseen, vaikka se lisättäisiin käyttäjän linkkeihin.
 P.H. | 31.03.18 | 1h | Linkkisuositusten listauukseen mahdollisuus toistaa videoita ja lisätä niitä omiin linkkeihin.
 P.H. | 02.04.18 | 2h | Aloitettu refaktorointi, jotta videoita voidaan soittaa yksi kerrallaan videosoittimessa. Luodaan siis uusi reducer, joka hallitsee videon sijaintia (yläpalkki vai soitin) jne.
-YHTEENSÄ | 124,5h
+P.H. | 03.04.18 | 2h | Tajuttu vihdoin, että elementin Youtube event.target voidaan tallettaa reducerin tilaksi, jolloin eri soittimia voidaan hallita reducerista. Sen verran suuria muutoksia tulossa, etten viitsi luoda committia, jotta voin tarvittaessa palauttaa alkuperäisen.
+YHTEENSÄ | 126,5h
