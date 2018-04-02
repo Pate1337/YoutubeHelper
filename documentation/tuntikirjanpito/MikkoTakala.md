@@ -11,4 +11,5 @@
 |   | 3.5h | Favorite linkkien poisto tehty loppuun, nyt myös User olion favorites listalta poistuu linkki joka on poistettu.
 | 27.03.18 | 3h | Favorites listaa muokattu paremmaksi, voi soittaa videoita, ulkoasu järkevämpi. Käyttäjälistaan lisätty toiminnallisuutta, kesken vielä
 | 29.03.2018 | 3h | Käyttäjien välisten kommenttien jättämisen rakentamista, vähän sekava eikä toimi vielä.
- YHTEENSÄ | 27h |  
+| 02.04.2018 | 1h | Kommenttien lisääminen alkaa olla lähellä toimintaa. Tietokannassa tallentuu jo se mitä pitää
+ YHTEENSÄ | 28h |  
