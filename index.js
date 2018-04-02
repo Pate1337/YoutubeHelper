@@ -10,7 +10,9 @@ const linksRouter = require('./testControllers/links')
 const loginRouter = require('./controllers/login')
 const playlistsRouter = require('./testControllers/playlists')
 const relatedsRouter = require('./testControllers/relateds')
+const commentsRouter = require('./testControllers/comments')
 const path = require('path')
+
 
 
 mongoose.connect(config.mongoUrl)
@@ -30,6 +32,7 @@ app.use('/api/links', linksRouter)
 app.use('/api/login', loginRouter)
 app.use('/api/playlists', playlistsRouter)
 app.use('/api/relateds', relatedsRouter)
+app.use('/api/comments', commentsRouter)
 
 app.use(express.static('build'))
 
