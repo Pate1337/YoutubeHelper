@@ -65,4 +65,6 @@ P.H. | 31.03.18 | 1h | Linkkisuositusten listauukseen mahdollisuus toistaa video
 P.H. | 02.04.18 | 2h | Aloitettu refaktorointi, jotta videoita voidaan soittaa yksi kerrallaan videosoittimessa. Luodaan siis uusi reducer, joka hallitsee videon sijaintia (yläpalkki vai soitin) jne.
 P.H. | 03.04.18 | 2h | Tajuttu vihdoin, että elementin Youtube event.target voidaan tallettaa reducerin tilaksi, jolloin eri soittimia voidaan hallita reducerista. Sen verran suuria muutoksia tulossa, etten viitsi luoda committia, jotta voin tarvittaessa palauttaa alkuperäisen.
 P.H. | 03.04.18 | 6,5h | Refaktoroitu kaikki videoon toistoon liittyvä frontissa. Luotu omat komponentit painikkeille. Klikattu video toistetaan yhdessä soittimessa yksi kerrallaan.
-YHTEENSÄ | 133h
+P.H. | 03.04.18 | 2h | Playlistien toimintaa korjattu yhteensopivaksi uusien muutosten kanssa.
+P.H. | 04.04.18 | 2h | Playlistit toimivat myös nyt. Muutama bugi pitää vielä korjata, esim. soittolistan hallinnointi kun vain yläpalkki näytetään, aiheuttaa siirtymisen playeriin.
+YHTEENSÄ | 137h
