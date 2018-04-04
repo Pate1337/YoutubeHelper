@@ -67,4 +67,5 @@ P.H. | 03.04.18 | 2h | Tajuttu vihdoin, että elementin Youtube event.target 
 P.H. | 03.04.18 | 6,5h | Refaktoroitu kaikki videoon toistoon liittyvä frontissa. Luotu omat komponentit painikkeille. Klikattu video toistetaan yhdessä soittimessa yksi kerrallaan.
 P.H. | 03.04.18 | 2h | Playlistien toimintaa korjattu yhteensopivaksi uusien muutosten kanssa.
 P.H. | 04.04.18 | 2h | Playlistit toimivat myös nyt. Muutama bugi pitää vielä korjata, esim. soittolistan hallinnointi kun vain yläpalkki näytetään, aiheuttaa siirtymisen playeriin.
-YHTEENSÄ | 137h
+P.H. | 04.04.18 | 5h | Uloskirjautuessa videon toisto pysäytetään. Nyt linkkiä painettaessa video toistetaan siellä, missä aikaisempaa videota toistettiin. Linkinlisäyspainikkeet näytetään vain niille paikoille, joissa linkki ei vielä ole (esim. suosikkia ei näytetä jos linkki on siellä). Muutettu suosikin ja soittolistojen lisäys siten, että palvelin kutsut hoidetaan kerralla lopuksi.
+YHTEENSÄ | 142h
