@@ -13,4 +13,5 @@
 | 29.03.2018 | 3h | Käyttäjien välisten kommenttien jättämisen rakentamista, vähän sekava eikä toimi vielä.
 | 02.04.2018 | 1h | Kommenttien lisääminen alkaa olla lähellä toimintaa. Tietokannassa tallentuu jo se mitä pitää
 |   | 2.5h | Niitten vitun kommenttien säätämistä. Eihän se paska toimi vieläkään
- YHTEENSÄ | 28h |  
+| 07.04.2018 | 2.5h | Sama kun ylempi. Miljoona riviä console logia ja pään seinään hakkaamista ja tuloksena tyhjiä taulukoita. Ei edes vituta
+ YHTEENSÄ | 30.5h |  
