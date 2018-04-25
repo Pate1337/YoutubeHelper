@@ -2,6 +2,7 @@ const usersRouter = require('express').Router()
 const User = require('../models/user')
 const Link = require('../models/link')
 const RelatedLink = require('../models/relatedLink')
+const Comment = require('../models/comment')
 const bcrypt = require('bcrypt')
 
 usersRouter.get('/', async (request, response) => {
@@ -50,7 +51,13 @@ usersRouter.get('/:id', async (request, response) => {
             path: 'link',
             model: 'Link'
           }
-        }])
+        },
+        {
+          //testi, tälle ei ole vielä tarkistusta tossa ifissä
+          path: 'rComments',
+          model: 'Comment'
+        }
+      ])
     } else if (user.links.length !== 0 && user.playlists.length !== 0) {
       searchedUser = await User
         .findById(id)
