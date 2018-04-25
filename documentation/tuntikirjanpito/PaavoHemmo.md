@@ -68,4 +68,5 @@ P.H. | 03.04.18 | 6,5h | Refaktoroitu kaikki videoon toistoon liittyvä frontiss
 P.H. | 03.04.18 | 2h | Playlistien toimintaa korjattu yhteensopivaksi uusien muutosten kanssa.
 P.H. | 04.04.18 | 2h | Playlistit toimivat myös nyt. Muutama bugi pitää vielä korjata, esim. soittolistan hallinnointi kun vain yläpalkki näytetään, aiheuttaa siirtymisen playeriin.
 P.H. | 04.04.18 | 5h | Uloskirjautuessa videon toisto pysäytetään. Nyt linkkiä painettaessa video toistetaan siellä, missä aikaisempaa videota toistettiin. Linkinlisäyspainikkeet näytetään vain niille paikoille, joissa linkki ei vielä ole (esim. suosikkia ei näytetä jos linkki on siellä). Muutettu suosikin ja soittolistojen lisäys siten, että palvelin kutsut hoidetaan kerralla lopuksi.
-YHTEENSÄ | 142h
+P.H. | 25.04.18 | 1,5h | Jaettu toiminnallisuuksia omiin routeihinsa. Määritelty mitä näytetään kirjautuneelle ja ei-kirjautuneelle käyttäjälle.
+YHTEENSÄ | 143,5h
