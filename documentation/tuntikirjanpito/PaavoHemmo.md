@@ -70,4 +70,5 @@ P.H. | 04.04.18 | 2h | Playlistit toimivat myös nyt. Muutama bugi pitää vi
 P.H. | 04.04.18 | 5h | Uloskirjautuessa videon toisto pysäytetään. Nyt linkkiä painettaessa video toistetaan siellä, missä aikaisempaa videota toistettiin. Linkinlisäyspainikkeet näytetään vain niille paikoille, joissa linkki ei vielä ole (esim. suosikkia ei näytetä jos linkki on siellä). Muutettu suosikin ja soittolistojen lisäys siten, että palvelin kutsut hoidetaan kerralla lopuksi.
 P.H. | 25.04.18 | 1,5h | Jaettu toiminnallisuuksia omiin routeihinsa. Määritelty mitä näytetään kirjautuneelle ja ei-kirjautuneelle käyttäjälle.
 P.H. | 25.04.18 | 1,5h | Asennettu semantic. Tutustuttu tyyleihin.
-YHTEENSÄ | 145h
+P.H. | 26.04.18 | 2,5h | Semanticsilla toteutettu yläpalkki ja menu.
+YHTEENSÄ | 147,5h
