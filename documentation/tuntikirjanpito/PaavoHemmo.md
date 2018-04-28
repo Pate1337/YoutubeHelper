@@ -71,4 +71,5 @@ P.H. | 04.04.18 | 5h | Uloskirjautuessa videon toisto pysäytetään. Nyt linkk
 P.H. | 25.04.18 | 1,5h | Jaettu toiminnallisuuksia omiin routeihinsa. Määritelty mitä näytetään kirjautuneelle ja ei-kirjautuneelle käyttäjälle.
 P.H. | 25.04.18 | 1,5h | Asennettu semantic. Tutustuttu tyyleihin.
 P.H. | 26.04.18 | 2,5h | Semanticsilla toteutettu yläpalkki ja menu.
-YHTEENSÄ | 147,5h
+P.H. | 28.04.18 | 2h | Semanticin Menu ei toimi Routerin NavLinkin kanssa. Yritetty keksiä ratkaisua.
+YHTEENSÄ | 149,5h
