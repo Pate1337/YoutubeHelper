@@ -72,4 +72,5 @@ P.H. | 25.04.18 | 1,5h | Jaettu toiminnallisuuksia omiin routeihinsa. Määritel
 P.H. | 25.04.18 | 1,5h | Asennettu semantic. Tutustuttu tyyleihin.
 P.H. | 26.04.18 | 2,5h | Semanticsilla toteutettu yläpalkki ja menu.
 P.H. | 28.04.18 | 2h | Semanticin Menu ei toimi Routerin NavLinkin kanssa. Yritetty keksiä ratkaisua.
-YHTEENSÄ | 149,5h
+P.H. | 28.04.18 | 0,5h | Menu saatu toimimaan semanticin kanssa. Vielä muutama linkki jotka pitää korjata.
+YHTEENSÄ | 150h
