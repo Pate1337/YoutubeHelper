@@ -74,4 +74,5 @@ P.H. | 26.04.18 | 2,5h | Semanticsilla toteutettu yläpalkki ja menu.
 P.H. | 28.04.18 | 2h | Semanticin Menu ei toimi Routerin NavLinkin kanssa. Yritetty keksiä ratkaisua.
 P.H. | 28.04.18 | 0,5h | Menu saatu toimimaan semanticin kanssa. Vielä muutama linkki jotka pitää korjata.
 P.H. | 29.04.18 | 1h | Menun linkit korjailtu. Aloiteltu Sticky-elementtiä.
-YHTEENSÄ | 151h
+P.H. | 30.04.18 | 2h | Menu pysyy nyt paikallaan kun sivua scrollataan, eikä sen alle ole mahdollista kelata kamaa mikäli ei pakko. Kun kursorin vie video thumbnailin päälle, ilmestyy play-painike.
+YHTEENSÄ | 153h
