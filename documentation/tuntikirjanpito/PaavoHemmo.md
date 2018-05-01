@@ -76,4 +76,5 @@ P.H. | 28.04.18 | 0,5h | Menu saatu toimimaan semanticin kanssa. Vielä muuta
 P.H. | 29.04.18 | 1h | Menun linkit korjailtu. Aloiteltu Sticky-elementtiä.
 P.H. | 30.04.18 | 2h | Menu pysyy nyt paikallaan kun sivua scrollataan, eikä sen alle ole mahdollista kelata kamaa mikäli ei pakko. Kun kursorin vie video thumbnailin päälle, ilmestyy play-painike.
 P.H. | 01.05.18 | 2,5h | Luotu videoehdotuksista Item-elementit. Säädetty hakukenttä, joka pysyy "stickkaa" oikeaan kohtaan sivua scrollatessa.
-YHTEENSÄ | 155,5h
+P.H. | 01.05.18 | 1,5h | Luotu nätit painikkeet linkkien lisäämiseen.
+YHTEENSÄ | 157h
