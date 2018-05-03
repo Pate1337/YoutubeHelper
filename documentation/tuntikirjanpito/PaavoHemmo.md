@@ -79,4 +79,5 @@ P.H. | 01.05.18 | 2,5h | Luotu videoehdotuksista Item-elementit. Säädetty h
 P.H. | 01.05.18 | 1,5h | Luotu nätit painikkeet linkkien lisäämiseen.
 P.H. | 02.05.18 | 3h | Notifikaatiot lisätty. Sisäänkirjautumislomake tyylitelty. Menuun lisätty Iconit.
 P.H. | 03.05.18 | 2h | Saatu video muuttamaan kokoaan ja vaihtamaan sijaintiaan lopettamatta toistoa. Ei toimi vielä kunnolla.
-YHTEENSÄ | 162h
+P.H. | 03.05.18 | 4h | Videon sijaintia ja kokoa voi nyt muuttaa. Lisäksi optimoitu erikokoisille näytöille.
+YHTEENSÄ | 166h
