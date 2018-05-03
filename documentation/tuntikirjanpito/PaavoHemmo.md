@@ -78,4 +78,5 @@ P.H. | 30.04.18 | 2h | Menu pysyy nyt paikallaan kun sivua scrollataan, eikä
 P.H. | 01.05.18 | 2,5h | Luotu videoehdotuksista Item-elementit. Säädetty hakukenttä, joka pysyy "stickkaa" oikeaan kohtaan sivua scrollatessa.
 P.H. | 01.05.18 | 1,5h | Luotu nätit painikkeet linkkien lisäämiseen.
 P.H. | 02.05.18 | 3h | Notifikaatiot lisätty. Sisäänkirjautumislomake tyylitelty. Menuun lisätty Iconit.
-YHTEENSÄ | 160h
+P.H. | 03.05.18 | 2h | Saatu video muuttamaan kokoaan ja vaihtamaan sijaintiaan lopettamatta toistoa. Ei toimi vielä kunnolla.
+YHTEENSÄ | 162h
