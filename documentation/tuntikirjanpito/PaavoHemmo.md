@@ -82,4 +82,5 @@ P.H. | 03.05.18 | 2h | Saatu video muuttamaan kokoaan ja vaihtamaan sijaintiaa
 P.H. | 03.05.18 | 4h | Videon sijaintia ja kokoa voi nyt muuttaa. Lisäksi optimoitu erikokoisille näytöille.
 P.H. | 03.05.18 | 1h | Nappeja koristeltu.
 P.H. | 04.04.18 | 2h | Menupalkkia pienennetty. Sijainteja paranneltu.
-YHTEENSÄ | 169h
+P.H. | 04.04.18 | 2h | Saatu recommended linkit jaettua sivuihin.
+YHTEENSÄ | 171h
