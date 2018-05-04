@@ -81,4 +81,5 @@ P.H. | 02.05.18 | 3h | Notifikaatiot lisätty. Sisäänkirjautumislomake tyyli
 P.H. | 03.05.18 | 2h | Saatu video muuttamaan kokoaan ja vaihtamaan sijaintiaan lopettamatta toistoa. Ei toimi vielä kunnolla.
 P.H. | 03.05.18 | 4h | Videon sijaintia ja kokoa voi nyt muuttaa. Lisäksi optimoitu erikokoisille näytöille.
 P.H. | 03.05.18 | 1h | Nappeja koristeltu.
-YHTEENSÄ | 167h
+P.H. | 04.04.18 | 2h | Menupalkkia pienennetty. Sijainteja paranneltu.
+YHTEENSÄ | 169h
