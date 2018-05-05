@@ -84,4 +84,5 @@ P.H. | 03.05.18 | 1h | Nappeja koristeltu.
 P.H. | 04.05.18 | 2h | Menupalkkia pienennetty. Sijainteja paranneltu.
 P.H. | 04.05.18 | 2h | Saatu recommended linkit jaettua sivuihin.
 P.H. | 05.05.18 | 0,5h | Sijainteja viilattu jälleen.
-YHTEENSÄ | 171,5h
+P.H. | 05.05.18 | 2,5h | Toistettava video menee nyt videon alle scrollatessa automaattisesti ruudun oikeaan alalaitaan. Sieltä sen saa takaisin ylös jos tarvitsee.
+YHTEENSÄ | 174h
