@@ -85,4 +85,5 @@ P.H. | 04.05.18 | 2h | Menupalkkia pienennetty. Sijainteja paranneltu.
 P.H. | 04.05.18 | 2h | Saatu recommended linkit jaettua sivuihin.
 P.H. | 05.05.18 | 0,5h | Sijainteja viilattu jälleen.
 P.H. | 05.05.18 | 2,5h | Toistettava video menee nyt videon alle scrollatessa automaattisesti ruudun oikeaan alalaitaan. Sieltä sen saa takaisin ylös jos tarvitsee.
-YHTEENSÄ | 174h
+P.H. | 06.05.18 | 1,5h | Poistettu kaikki turhat kommentit ja luokat. Koko HiddenPlayer komponentti poistettu. (Sinne meni n.30 tuntia turhaa työtä, koska videon sijainnin saa muutettua yksinkertaisesti asettamalla vaikka div-elementtiin sihainnin..).
+YHTEENSÄ | 175,5h
