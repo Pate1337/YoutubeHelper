@@ -90,4 +90,5 @@ P.H. | 06.05.18 | 2h | Youtube hakuikkunaan lisätty tyylit. Puhelimella viel�
 P.H. | 07.05.18 | 1,5h | Lisätty videosoittimeen painike, jolla voi estää videon sijainnin muutoksen. Lisäksi stop-painike. Elementeille lisätty 'title'-kenttiä. Linkkien lisäystä listoille paranneltu.
 P.H. | 07.05.18 | 1h | Suosituksiin luotu mahdollisuus ehdotuksien sorttaamiseen nimen ja countin mukaan.
 P.H. | 07.05.18 | 1,5h | Youtube hakukenttää tyylitelty.
-YHTEENSÄ | 181,5h
+P.H. | 08.05.18 | 0,5h | Etusivun videoehdotus korjattu tyylikkääksi, samoin Dimmereitä korjailtu.
+YHTEENSÄ | 182h
