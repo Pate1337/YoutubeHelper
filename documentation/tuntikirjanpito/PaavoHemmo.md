@@ -87,4 +87,5 @@ P.H. | 05.05.18 | 0,5h | Sijainteja viilattu jälleen.
 P.H. | 05.05.18 | 2,5h | Toistettava video menee nyt videon alle scrollatessa automaattisesti ruudun oikeaan alalaitaan. Sieltä sen saa takaisin ylös jos tarvitsee.
 P.H. | 06.05.18 | 1,5h | Poistettu kaikki turhat kommentit ja luokat. Koko HiddenPlayer komponentti poistettu. (Sinne meni n.30 tuntia turhaa työtä, koska videon sijainnin saa muutettua yksinkertaisesti asettamalla vaikka div-elementtiin sihainnin..).
 P.H. | 06.05.18 | 2h | Youtube hakuikkunaan lisätty tyylit. Puhelimella vielä huono.
-YHTEENSÄ | 177,5h
+P.H. | 07.05.18 | 1,5h | Lisätty videosoittimeen painike, jolla voi estää videon sijainnin muutoksen. Lisäksi stop-painike. Elementeille lisätty 'title'-kenttiä. Linkkien lisäystä listoille paranneltu.
+YHTEENSÄ | 179h
