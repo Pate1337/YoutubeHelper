@@ -88,4 +88,5 @@ P.H. | 05.05.18 | 2,5h | Toistettava video menee nyt videon alle scrollatessa
 P.H. | 06.05.18 | 1,5h | Poistettu kaikki turhat kommentit ja luokat. Koko HiddenPlayer komponentti poistettu. (Sinne meni n.30 tuntia turhaa työtä, koska videon sijainnin saa muutettua yksinkertaisesti asettamalla vaikka div-elementtiin sihainnin..).
 P.H. | 06.05.18 | 2h | Youtube hakuikkunaan lisätty tyylit. Puhelimella vielä huono.
 P.H. | 07.05.18 | 1,5h | Lisätty videosoittimeen painike, jolla voi estää videon sijainnin muutoksen. Lisäksi stop-painike. Elementeille lisätty 'title'-kenttiä. Linkkien lisäystä listoille paranneltu.
-YHTEENSÄ | 179h
+P.H. | 07.05.18 | 1h | Suosituksiin luotu mahdollisuus ehdotuksien sorttaamiseen nimen ja countin mukaan.
+YHTEENSÄ | 180h
