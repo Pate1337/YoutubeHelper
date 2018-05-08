@@ -91,4 +91,5 @@ P.H. | 07.05.18 | 1,5h | Lisätty videosoittimeen painike, jolla voi estää 
 P.H. | 07.05.18 | 1h | Suosituksiin luotu mahdollisuus ehdotuksien sorttaamiseen nimen ja countin mukaan.
 P.H. | 07.05.18 | 1,5h | Youtube hakukenttää tyylitelty.
 P.H. | 08.05.18 | 0,5h | Etusivun videoehdotus korjattu tyylikkääksi, samoin Dimmereitä korjailtu.
-YHTEENSÄ | 182h
+P.H. | 08.05.18 | 2h | Lisätty tyylit soittolistoihin, suosikeihin ja Youtube hakutuloksiin.
+YHTEENSÄ | 184h
