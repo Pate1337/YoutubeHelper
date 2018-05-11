@@ -93,4 +93,5 @@ P.H. | 07.05.18 | 1,5h | Youtube hakukenttää tyylitelty.
 P.H. | 08.05.18 | 0,5h | Etusivun videoehdotus korjattu tyylikkääksi, samoin Dimmereitä korjailtu.
 P.H. | 08.05.18 | 2h | Lisätty tyylit soittolistoihin, suosikeihin ja Youtube hakutuloksiin.
 P.H. | 10.05.18 | 4h | Vihdoinkin saatu sovellus hakemaan Youtuben hakuehdotukset hakupalkkiin. Cross-originin kanssa oli ongelmia, ratkesi hakemalla data jsonp-muodossa, jsonin sijasta.
-YHTEENSÄ | 188h
+P.H. | 11.05.18 | 3h | Hakuehdotuskenttää paranneltu. Mobiililaitteille erilainen.
+YHTEENSÄ | 191h
