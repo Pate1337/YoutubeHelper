@@ -95,4 +95,5 @@ P.H. | 08.05.18 | 2h | Lisätty tyylit soittolistoihin, suosikeihin ja Youtub
 P.H. | 10.05.18 | 4h | Vihdoinkin saatu sovellus hakemaan Youtuben hakuehdotukset hakupalkkiin. Cross-originin kanssa oli ongelmia, ratkesi hakemalla data jsonp-muodossa, jsonin sijasta.
 P.H. | 11.05.18 | 3h | Hakuehdotuskenttää paranneltu. Mobiililaitteille erilainen.
 P.H. | 11.05.18 | 3h | Mobiililaitteille tehty täysin erilainen Youtube-hakukenttä kuin tietokoneelle. Edellisen sivun painaminen päivittää nyt myös menupalkin.
-YHTEENSÄ | 194h
+P.H. | 12.05.18 | 2h | Youtube hakutuloksiin otettu mukaan videon lisäyspäivä ja katsojaluku.
+YHTEENSÄ | 196h
