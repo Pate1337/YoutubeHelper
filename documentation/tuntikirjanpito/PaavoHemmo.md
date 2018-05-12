@@ -96,4 +96,5 @@ P.H. | 10.05.18 | 4h | Vihdoinkin saatu sovellus hakemaan Youtuben hakuehdotu
 P.H. | 11.05.18 | 3h | Hakuehdotuskenttää paranneltu. Mobiililaitteille erilainen.
 P.H. | 11.05.18 | 3h | Mobiililaitteille tehty täysin erilainen Youtube-hakukenttä kuin tietokoneelle. Edellisen sivun painaminen päivittää nyt myös menupalkin.
 P.H. | 12.05.18 | 2h | Youtube hakutuloksiin otettu mukaan videon lisäyspäivä ja katsojaluku.
-YHTEENSÄ | 196h
+P.H. | 12.05.18 | 0,5h | Youtube hakua paranneltu puhelimille.
+YHTEENSÄ | 196,5h
