@@ -14,4 +14,5 @@
 | 02.04.2018 | 1h | Kommenttien lisääminen alkaa olla lähellä toimintaa. Tietokannassa tallentuu jo se mitä pitää
 |   | 2.5h | Niitten vitun kommenttien säätämistä. Eihän se paska toimi vieläkään
 | 07.04.2018 | 2.5h | Sama kun ylempi. Miljoona riviä console logia ja pään seinään hakkaamista ja tuloksena tyhjiä taulukoita. Ei edes vituta
- YHTEENSÄ | 30.5h |  
+| 15.05.2018 | 2h | Tauon jälkeen vähän edistystä. Kommentit näkyy nyt, mutta formissa tai jossain on jotakin hämärää, vain yhdelle käyttäjälle voi lisätä kommentteja, muista jää kaikki muu paitsi ID pois.
+ YHTEENSÄ | 32.5h |  
