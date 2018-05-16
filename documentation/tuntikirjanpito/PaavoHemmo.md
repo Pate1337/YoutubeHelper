@@ -99,4 +99,5 @@ P.H. | 12.05.18 | 2h | Youtube hakutuloksiin otettu mukaan videon lisäyspäi
 P.H. | 12.05.18 | 0,5h | Youtube hakua paranneltu puhelimille.
 P.H. | 13.05.18 | 3h | Videolinkkien lisäystä listoihin paranneltu. Virhetilanteita ei voi aiheutua käyttäjän toimesta enää. Kun linkkiä soitetaan ja se lisätään soittolistalle, rupeaa soitin automaattisesti soittamaan kyseistä soittolistaa.
 P.H. | 16.05.18 | 3h | Toistettavalle videolle näytetään aina video-ehdotukset.
-YHTEENSÄ | 202,5h
+P.H. | 17.05.18 | 1,5h | Hakuehdotukset jokaiselle toistettavalle videolle paranneltu.
+YHTEENSÄ | 204h
