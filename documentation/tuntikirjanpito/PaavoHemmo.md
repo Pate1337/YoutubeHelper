@@ -101,4 +101,5 @@ P.H. | 13.05.18 | 3h | Videolinkkien lisäystä listoihin paranneltu. Virheti
 P.H. | 16.05.18 | 3h | Toistettavalle videolle näytetään aina video-ehdotukset.
 P.H. | 17.05.18 | 1,5h | Hakuehdotukset jokaiselle toistettavalle videolle paranneltu.
 P.H. | 17.05.18 | 1,5h | Korjauksia. Kokeiltu sivupalkkia puhelimelle.
-YHTEENSÄ | 205,5h
+P.H. | 17.05.18 | 2h | Videoehdotukset saa nyt näkyville myös puhelimella.
+YHTEENSÄ | 207,5h
