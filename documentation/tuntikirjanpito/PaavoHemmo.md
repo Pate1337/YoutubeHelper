@@ -102,4 +102,5 @@ P.H. | 16.05.18 | 3h | Toistettavalle videolle näytetään aina video-ehdotu
 P.H. | 17.05.18 | 1,5h | Hakuehdotukset jokaiselle toistettavalle videolle paranneltu.
 P.H. | 17.05.18 | 1,5h | Korjauksia. Kokeiltu sivupalkkia puhelimelle.
 P.H. | 17.05.18 | 2h | Videoehdotukset saa nyt näkyville myös puhelimella.
-YHTEENSÄ | 207,5h
+P.H. | 18.05.18 | 4h | Lisätty poistopainikkeet linkeille. Backendia ei vielä toteutettu. Latausikoni linkkien lisäyksen yhteydessä. Korjailtu videoehdotusten sivupalkkia puhelimelle.
+YHTEENSÄ | 211,5h
