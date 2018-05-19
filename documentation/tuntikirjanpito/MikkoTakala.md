@@ -15,5 +15,5 @@
 |   | 2.5h | Niitten vitun kommenttien säätämistä. Eihän se paska toimi vieläkään
 | 07.04.2018 | 2.5h | Sama kun ylempi. Miljoona riviä console logia ja pään seinään hakkaamista ja tuloksena tyhjiä taulukoita. Ei edes vituta
 | 15.05.2018 | 2h | Tauon jälkeen vähän edistystä. Kommentit näkyy nyt, mutta formissa tai jossain on jotakin hämärää, vain yhdelle käyttäjälle voi lisätä kommentteja, muista jää kaikki muu paitsi ID pois.
-| 19.05.2018 | 2.5h | Kommentit saatu toimimaan, näkyy teksti, ja sivu näyttää uuden kommentin nyt jättämisen jälkeen heti
+| 19.05.2018 | 2.5h | Kommentit saatu toimimaan, vika oli backendissä, siirretty kommenttien haku pois getUserilta omaan comments routeen, ja reduceri ja frontti muokattu käyttämään sitä, jotta ei tarvi aina hakea miljoonaa riviä turhaa dataa userien mukana, vaan saadaan pelkät kommentit haettua lähettäjän id:n perusteella. Myös sivun päivitys kommentin jättämisen jälkeen toimii nyt, eikä tarvi rämppäillä F5.
  YHTEENSÄ | 37.5h |  
