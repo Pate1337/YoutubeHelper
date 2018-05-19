@@ -17,6 +17,13 @@ commentsRouter.get('/', async (request, response) => {
   response.json(comments.map(Comment.format))
 })
 
+commentsRouter.get('/:id', async (request, response) => {
+  console.log('commentsRouter GET_BY_USER_ID')
+  const comments = await Comment.find({receiver:request.params.id})
+  //console.log(comments)
+  response.json(comments.map(Comment.format))
+})
+
 commentsRouter.post('/', async (request, response) => {
   console.log('commentsRouter POST')
   try {
