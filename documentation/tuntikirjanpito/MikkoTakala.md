@@ -16,4 +16,4 @@
 | 07.04.2018 | 2.5h | Sama kun ylempi. Miljoona riviä console logia ja pään seinään hakkaamista ja tuloksena tyhjiä taulukoita. Ei edes vituta
 | 15.05.2018 | 2h | Tauon jälkeen vähän edistystä. Kommentit näkyy nyt, mutta formissa tai jossain on jotakin hämärää, vain yhdelle käyttäjälle voi lisätä kommentteja, muista jää kaikki muu paitsi ID pois.
 | 19.05.2018 | 2.5h | Kommentit saatu toimimaan, näkyy teksti, ja sivu näyttää uuden kommentin nyt jättämisen jälkeen heti
- YHTEENSÄ | 35h |  
+ YHTEENSÄ | 37.5h |  
