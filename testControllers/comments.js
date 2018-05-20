@@ -43,7 +43,8 @@ commentsRouter.post('/', async (request, response) => {
     const comment = new Comment({
       content: body.content,
       receiver: body.receiver,
-      sender: body.sender
+      sender: { id: body.sender,
+                name: sender.username}
     })
     console.log('commentsRouter KOMMENTTI luotu')
     const savedComment = await comment.save()
@@ -67,6 +68,34 @@ commentsRouter.post('/', async (request, response) => {
       console.log(e)
       response.status(500).json({ error: 'something went wrong...' })
     }
+  }
+})
+
+commentsRouter.delete('/:id', async (request, response) => {
+  console.log('commentsRouter DELETE')
+  try {
+    const token = getTokenFrom(request)
+    console.log('TOKEN', token)
+    const decodedToken = jwt.verify(token, process.env.SECRET)
+
+    if (!token || !decodedToken.id) {
+      console.log('no token or decoded token')
+      return response.status(401).json({ error: 'token missing or invalid' })
+    }
+    const commentToDelete = await Comment.findById(request.params.id)
+    console.log('DecodedTokenID',decodedToken.id)
+    console.log('RECEIVER', commentToDelete.receiver)
+    if(decodedToken.id == commentToDelete.receiver) {
+      console.log('token was same as parameter id')
+      await Comment.findByIdAndRemove(request.params.id)
+      return response.status(204).end()
+    } else {
+      console.log('token was not the same as parameter id')
+      return response.status(401).json({ error: 'No authorization'})
+    }
+
+  } catch (e) {
+    return 'error'
   }
 })
 
