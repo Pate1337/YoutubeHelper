@@ -3,7 +3,8 @@ const mongoose = require('mongoose')
 const commentSchema = new mongoose.Schema({
   content: String,
   sender: { id: String, name: String},
-  receiver: String
+  receiver: String,
+  date: Date
 })
 
 commentSchema.statics.format = (comment) => {
@@ -11,7 +12,8 @@ commentSchema.statics.format = (comment) => {
     id: comment._id,
     content: comment.content,
     sender: {id: comment.sender, name: comment.sender.username},
-    receiver: comment.receiver
+    receiver: comment.receiver,
+    date: comment.date
   }
 }
 

@@ -48,7 +48,8 @@ commentsRouter.post('/', async (request, response) => {
       sender: {
         id: body.sender,
         name: sender.username
-      }
+      },
+      date: new Date()
     })
     console.log('commentsRouter KOMMENTTI luotu')
     const savedComment = await comment.save()
