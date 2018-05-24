@@ -2,16 +2,18 @@ const mongoose = require('mongoose')
 
 const commentSchema = new mongoose.Schema({
   content: String,
-  sender: String,
-  receiver: String
+  sender: { id: String, name: String},
+  receiver: String,
+  date: Date
 })
 
 commentSchema.statics.format = (comment) => {
   return {
     id: comment._id,
     content: comment.content,
-    sender: comment.sender,
-    receiver: comment.receiver
+    sender: {id: comment.sender, name: comment.sender.username},
+    receiver: comment.receiver,
+    date: comment.date
   }
 }
 

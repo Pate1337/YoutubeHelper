@@ -1,6 +1,8 @@
 # YoutubeHelper
 React + Node based app
-Sovellus, joka käyttää YouTube APIa videoiden hakemiseen ja näyttämiseen. Lisää toiminnallisuutta suunnitellaan.
+Sovellus, joka käyttää YouTube APIa videoiden hakemiseen ja näyttämiseen. 
+Käyttäjät voivat jättää toisilleen kommentteja.
+Lisää toiminnallisuutta suunnitellaan.
 
 ## Frontend
 
