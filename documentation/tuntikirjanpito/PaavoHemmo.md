@@ -105,4 +105,5 @@ P.H. | 17.05.18 | 2h | Videoehdotukset saa nyt näkyville myös puhelimella.
 P.H. | 18.05.18 | 4h | Lisätty poistopainikkeet linkeille. Backendia ei vielä toteutettu. Latausikoni linkkien lisäyksen yhteydessä. Korjailtu videoehdotusten sivupalkkia puhelimelle.
 P.H. | 24.05.18 | 3h | Soittolistanäkymä korjattu. Loadereita lisäilty Youtube hakuun ja soittolistan refreshöintiin.
 P.H. | 24.05.18 | 2h | Luotu loaderReducer, jonka avulla voidaan hallita mahdollisia latausikoneita.
-YHTEENSÄ | 216,5h
+P.H. | 28.05.18 | 1h | Ikkuna kelataan otsikon tasalle näkymän vaihtuessa. Playlist painike soittimeen.
+YHTEENSÄ | 217,5h
