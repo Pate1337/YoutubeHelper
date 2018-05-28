@@ -138,9 +138,58 @@ playlistsRouter.get('/', async (request, response) => {
   }
 })*/
 
-playlistsRouter.delete('/all', async (request, response) => {
+/*playlistsRouter.delete('/all', async (request, response) => {
   await Playlist.remove({})
   response.status(204).end()
+})*/
+
+playlistsRouter.delete('/:playlistId/:linkId', async (request, response) => {
+  try {
+    console.log('Poistettavan playlist: ' + request.params.playlistId + ', linkin id: ' + request.params.linkId)
+    const body = request.body
+    const token = getTokenFrom(request)
+    const decodedToken = jwt.verify(token, process.env.SECRET)
+
+    if (!token || !decodedToken.id) {
+      console.log('TOKENI VÄÄRÄ')
+      return response.status(401).json({ error: 'token missing or invalid' })
+    }
+    /*Tähän pitäis saada viel tää
+    const blogToRemove = await Blog.findById(request.params.id)
+    console.log('BLOG TO REMOVE', blogToRemove)
+    if (blogToRemove.user.toString() !== decodedToken.id.toString()) {
+      return response.status(401).json({ error: 'can not remove other users blogs' })
+    }*/
+    const playlist = await Playlist.findById(request.params.playlistId)
+    if (playlist.user.toString() !== decodedToken.id.toString()) {
+      return response.status(401).json({ error: 'can not remove other users links!'})
+    }
+
+    await Link.findByIdAndRemove(request.params.linkId)
+
+    let newPlaylistLinks = []
+    console.log('playlist.links.length: ' + playlist.links.length)
+    playlist.links.forEach(l => {
+      if (l.toString() !== request.params.linkId.toString()) {
+        newPlaylistLinks.push(l)
+      } else {
+        console.log('Linkki joka poistetaan on: ' + l)
+      }
+    })
+    console.log('newPlaylistLinks.length: ' + newPlaylistLinks.length)
+    playlist.links = newPlaylistLinks
+    await playlist.save()
+    console.log('Response status 201')
+    response.status(204).end()
+
+  } catch (exception) {
+    if (exception.name === 'JsonWebTokenError') {
+      response.status(401).json({ error: exception.message })
+    } else {
+      console.log(exception)
+      response.status(500).json({ error: 'something went wrong...' })
+    }
+  }
 })
 
 module.exports = playlistsRouter
