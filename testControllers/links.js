@@ -139,6 +139,8 @@ linksRouter.delete('/favourites', async (request, response) => {
     } else {
       console.log('if statement ei toimi')
     }
+    let links = await Link.find({})
+    console.log('Linkkien määrä ennen poistoa: ' + links.length)
 
     if (!authorization || !decodedToken.id) {
       return response.status(401).json({ error: 'token missing or invalid' })
@@ -154,7 +156,8 @@ linksRouter.delete('/favourites', async (request, response) => {
     //console.log('FILTTERÖITY LISTA: ', user.links.filter(link => link != request.body.id))
     user.links = user.links.filter(link => link != request.body.id)
     await user.save()
-
+    links = await Link.find({})
+    console.log('Linkkien määrä poiston jälkeen: ' + links.length)
     response.status(204).end()
   } catch (e) {
     return 'error'

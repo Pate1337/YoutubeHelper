@@ -107,4 +107,5 @@ P.H. | 24.05.18 | 3h | Soittolistanäkymä korjattu. Loadereita lisäilty You
 P.H. | 24.05.18 | 2h | Luotu loaderReducer, jonka avulla voidaan hallita mahdollisia latausikoneita.
 P.H. | 28.05.18 | 1h | Ikkuna kelataan otsikon tasalle näkymän vaihtuessa. Playlist painike soittimeen.
 P.H. | 28.05.18 | 3h | Soittolistalta linkin poisto.
-YHTEENSÄ | 220,5h
+P.H. | 29.05.18 | 1,5h | Videosuositusten poisto. Notifikaatioita.
+YHTEENSÄ | 222h
