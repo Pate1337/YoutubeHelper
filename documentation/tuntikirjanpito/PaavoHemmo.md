@@ -108,4 +108,5 @@ P.H. | 24.05.18 | 2h | Luotu loaderReducer, jonka avulla voidaan hallita mahd
 P.H. | 28.05.18 | 1h | Ikkuna kelataan otsikon tasalle näkymän vaihtuessa. Playlist painike soittimeen.
 P.H. | 28.05.18 | 3h | Soittolistalta linkin poisto.
 P.H. | 29.05.18 | 1,5h | Videosuositusten poisto. Notifikaatioita.
-YHTEENSÄ | 222h
+P.H. | 30.05.18 | 2h | Lisätty sivutus myös suosikeille ja soittolistoille, sekä filtteröinti.  Soitettavan soittolistan videon kohdalla lukee nyt, että videoa toistetaan.
+YHTEENSÄ | 224h
