@@ -24,6 +24,14 @@ Sovellusta voi myös käyttää ilman käyttäjätunnuksen luomista, mutta täll
 Kun olet luonut käyttäjätunnuksen, hae sovelluksen kautta haluamasi video Youtubesta ja lisää se joko Suosikkeihisi tai luomaasi soittolistaan.
 Videon lisäyksen yhteydessä sovellus hakee Youtuben luomat videoehdotukset kyseiselle videolle ja tallettaa ne videosuosituksiisi.
 
+Sovelluksen backendi käynnistetään hakemistossa YoutubeHelper/ komennolla
+```
+npm start
+```
+Sovelluksen frontend käynnistetään hakemistossa YoutubeHelperFrontend/ythelper/ komennolla
+```
+npm start
+```
 --------------------------------
 
 ## Heroku
