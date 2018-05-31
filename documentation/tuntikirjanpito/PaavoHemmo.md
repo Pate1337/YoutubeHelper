@@ -109,4 +109,5 @@ P.H. | 28.05.18 | 1h | Ikkuna kelataan otsikon tasalle näkymän vaihtuessa. 
 P.H. | 28.05.18 | 3h | Soittolistalta linkin poisto.
 P.H. | 29.05.18 | 1,5h | Videosuositusten poisto. Notifikaatioita.
 P.H. | 30.05.18 | 2h | Lisätty sivutus myös suosikeille ja soittolistoille, sekä filtteröinti.  Soitettavan soittolistan videon kohdalla lukee nyt, että videoa toistetaan.
-YHTEENSÄ | 224h
+P.H. | 31.05.18 | 2h | Etusivun videoehdotuksia paranneltu.
+YHTEENSÄ | 226h
